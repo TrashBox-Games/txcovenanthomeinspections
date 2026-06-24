@@ -17,6 +17,6 @@ describe("Header", () => {
 
   it("renders the phone number", () => {
     render(<Header />);
-    expect(screen.getByText("(512) 555-0199")).toBeInTheDocument();
+    expect(screen.getByText("(832) 470-5230")).toBeInTheDocument();
   });
 });

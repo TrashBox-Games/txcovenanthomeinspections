@@ -2,11 +2,11 @@ export const SITE = {
   name: "Texas Covenant Home Inspections",
   shortName: "Texas Covenant",
   tagline: "Building trust, one inspection at a time.",
-  phone: "(512) 555-0199",
-  phoneHref: "tel:5125550199",
-  email: "contact@texascovenant.com",
-  infoEmail: "info@texascovenant.com",
-  location: "Serving Central Texas",
+  phone: "(832) 470-5230",
+  phoneHref: "tel:8324705230",
+  email: "txcovenanthomeinspections@gmail.com",
+  infoEmail: "txcovenanthomeinspections@gmail.com",
+  location: "Greater Houston Area",
   copyright: `© ${new Date().getFullYear()} Texas Covenant Home Inspections. All rights reserved.`,
 } as const;
 

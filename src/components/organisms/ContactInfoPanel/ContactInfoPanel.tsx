@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Calendar, MapPin, PhoneCall } from "lucide-react";
+import { Calendar, Mail, MapPin, PhoneCall } from "lucide-react";
 import { ContactInfoCard } from "@/components/molecules/ContactInfoCard/ContactInfoCard";
 import { SITE } from "@/lib/constants";
 
@@ -16,6 +16,19 @@ export function ContactInfoPanel() {
           className="text-sm font-semibold tracking-wider text-primary transition-colors hover:text-tertiary"
         >
           {SITE.phone}
+        </Link>
+      </ContactInfoCard>
+
+      <ContactInfoCard
+        icon={Mail}
+        title="Email"
+        description="Send us a message anytime."
+      >
+        <Link
+          href={`mailto:${SITE.email}`}
+          className="text-sm font-semibold tracking-wider text-primary transition-colors hover:text-tertiary"
+        >
+          {SITE.email}
         </Link>
       </ContactInfoCard>
 

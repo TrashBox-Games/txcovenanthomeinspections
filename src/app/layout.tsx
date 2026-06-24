@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Professional home inspections in Central Texas. Inspecting with integrity, serving with purpose.",
+    "Professional home inspections in the Greater Houston Area. Inspecting with integrity, serving with purpose.",
 };
 
 export default function RootLayout({

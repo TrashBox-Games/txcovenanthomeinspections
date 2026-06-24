@@ -9,7 +9,7 @@ import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Joel Piercy",
-  description: `Meet Joel Piercy, certified home inspector and pastor serving Central Texas with ${SITE.name}.`,
+  description: `Meet Joel Piercy, certified home inspector and pastor serving the Greater Houston Area with ${SITE.name}.`,
 };
 
 export default function AboutPage() {
