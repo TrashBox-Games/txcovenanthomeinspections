@@ -13,6 +13,7 @@ describe("Header", () => {
     expect(nav).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^about$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^contact$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^services$/i })).toBeInTheDocument();
   });
 
   it("renders the phone number", () => {
@@ -27,7 +28,7 @@ describe("Header", () => {
       screen.getByRole("navigation", { name: /mobile/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getAllByRole("link", { name: /^home$/i }).length,
+      screen.getAllByRole("link", { name: /^plumbing$/i }).length,
     ).toBeGreaterThan(0);
   });
 });

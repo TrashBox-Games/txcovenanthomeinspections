@@ -4,26 +4,8 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 import { SectionHeader } from "@/components/molecules/SectionHeader/SectionHeader";
 import { ServiceCard } from "@/components/molecules/ServiceCard/ServiceCard";
-import { SERVICE_IMAGES } from "@/lib/constants";
+import { SERVICES } from "@/lib/services";
 import { staggerContainer } from "@/lib/motion";
-
-const services = [
-  {
-    title: "Plumbing",
-    imageSrc: SERVICE_IMAGES.plumbing,
-    imageAlt: "Plumbing inspection",
-  },
-  {
-    title: "Electrical",
-    imageSrc: SERVICE_IMAGES.electrical,
-    imageAlt: "Electrical inspection",
-  },
-  {
-    title: "Roofing",
-    imageSrc: SERVICE_IMAGES.roofing,
-    imageAlt: "Roofing inspection",
-  },
-];
 
 export function ServicesSection() {
   return (
@@ -43,9 +25,9 @@ export function ServicesSection() {
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
         >
-          {services.map((service, index) => (
+          {SERVICES.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={service.slug}
               variants={{
                 hidden: { opacity: 0, y: 24 },
                 visible: {
@@ -55,7 +37,12 @@ export function ServicesSection() {
                 },
               }}
             >
-              <ServiceCard {...service} />
+              <ServiceCard
+                title={service.title}
+                imageSrc={service.image}
+                imageAlt={service.imageAlt}
+                href={`/services/${service.slug}`}
+              />
             </motion.div>
           ))}
         </motion.div>

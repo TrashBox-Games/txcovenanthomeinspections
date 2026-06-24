@@ -6,8 +6,10 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/atoms/Button/Button";
 import { Logo } from "@/components/atoms/Logo/Logo";
 import { MobileNavMenu } from "@/components/molecules/MobileNavMenu/MobileNavMenu";
+import { NavDropdown } from "@/components/molecules/NavDropdown/NavDropdown";
 import { NavLink } from "@/components/molecules/NavLink/NavLink";
-import { NAV_ITEMS, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import { isNavItemActive, NAV_ITEMS } from "@/lib/navigation";
 
 export function Header() {
   const pathname = usePathname();
@@ -28,15 +30,19 @@ export function Header() {
           className="hidden h-full items-center gap-8 md:flex"
           aria-label="Main navigation"
         >
-          {NAV_ITEMS.map((item) => (
-            <NavLink
-              key={item.href}
-              href={item.href}
-              isActive={pathname === item.href}
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          {NAV_ITEMS.map((item) =>
+            item.children ? (
+              <NavDropdown key={item.href} item={item} />
+            ) : (
+              <NavLink
+                key={item.href}
+                href={item.href}
+                isActive={isNavItemActive(pathname, item)}
+              >
+                {item.label}
+              </NavLink>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-2 md:gap-4">

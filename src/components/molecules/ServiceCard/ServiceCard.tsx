@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -8,6 +9,7 @@ interface ServiceCardProps {
   title: string;
   imageSrc: string;
   imageAlt: string;
+  href?: string;
   className?: string;
 }
 
@@ -15,12 +17,14 @@ export function ServiceCard({
   title,
   imageSrc,
   imageAlt,
+  href,
   className,
 }: ServiceCardProps) {
-  return (
+  const card = (
     <motion.div
       className={cn(
         "group relative aspect-square overflow-hidden rounded-xl border border-outline-variant shadow-ambient",
+        href && "cursor-pointer",
         className,
       )}
       whileHover={{ scale: 1.02 }}
@@ -42,4 +46,10 @@ export function ServiceCard({
       </div>
     </motion.div>
   );
+
+  if (href) {
+    return <Link href={href}>{card}</Link>;
+  }
+
+  return card;
 }

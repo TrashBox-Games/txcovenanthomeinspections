@@ -5,7 +5,8 @@ import { Phone, X } from "lucide-react";
 import { useEffect } from "react";
 import { Button } from "@/components/atoms/Button/Button";
 import { NavLink } from "@/components/molecules/NavLink/NavLink";
-import { NAV_ITEMS, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
+import { isNavItemActive, NAV_ITEMS } from "@/lib/navigation";
 
 interface MobileNavMenuProps {
   isOpen: boolean;
@@ -72,18 +73,45 @@ export function MobileNavMenu({
               </button>
             </div>
 
-            <div className="flex flex-1 flex-col px-margin-mobile">
-              {NAV_ITEMS.map((item) => (
-                <NavLink
-                  key={item.href}
-                  href={item.href}
-                  isActive={activePath === item.href}
-                  variant="stacked"
-                  onClick={onClose}
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+            <div className="flex flex-1 flex-col overflow-y-auto px-margin-mobile">
+              {NAV_ITEMS.map((item) =>
+                item.children ? (
+                  <div key={item.href}>
+                    <NavLink
+                      href={item.href}
+                      isActive={isNavItemActive(activePath, item)}
+                      variant="stacked"
+                      onClick={onClose}
+                    >
+                      {item.label}
+                    </NavLink>
+                    <div className="pl-4">
+                      {item.children.map((child) => (
+                        <NavLink
+                          key={child.href}
+                          href={child.href}
+                          isActive={activePath === child.href}
+                          variant="stacked"
+                          className="text-xs"
+                          onClick={onClose}
+                        >
+                          {child.label}
+                        </NavLink>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <NavLink
+                    key={item.href}
+                    href={item.href}
+                    isActive={isNavItemActive(activePath, item)}
+                    variant="stacked"
+                    onClick={onClose}
+                  >
+                    {item.label}
+                  </NavLink>
+                ),
+              )}
             </div>
 
             <div className="border-t border-outline-variant p-margin-mobile">

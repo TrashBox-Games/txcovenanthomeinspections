@@ -8,17 +8,19 @@ vi.mock("next/navigation", () => ({
 
 describe("MobileNavMenu", () => {
   it("renders navigation links when open", () => {
-    render(<MobileNavMenu isOpen onClose={vi.fn()} />);
+    render(<MobileNavMenu isOpen onClose={vi.fn()} activePath="/" />);
     expect(
       screen.getByRole("navigation", { name: /mobile/i }),
     ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^home$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^about$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^services$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^plumbing$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^contact$/i })).toBeInTheDocument();
   });
 
   it("does not render when closed", () => {
-    render(<MobileNavMenu isOpen={false} onClose={vi.fn()} />);
+    render(<MobileNavMenu isOpen={false} onClose={vi.fn()} activePath="/" />);
     expect(
       screen.queryByRole("navigation", { name: /mobile/i }),
     ).not.toBeInTheDocument();
@@ -26,7 +28,7 @@ describe("MobileNavMenu", () => {
 
   it("calls onClose when the close button is clicked", () => {
     const onClose = vi.fn();
-    render(<MobileNavMenu isOpen onClose={onClose} />);
+    render(<MobileNavMenu isOpen onClose={onClose} activePath="/" />);
     fireEvent.click(screen.getByRole("button", { name: /close menu/i }));
     expect(onClose).toHaveBeenCalledOnce();
   });
