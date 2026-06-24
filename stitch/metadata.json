@@ -1,0 +1,34 @@
+{
+  "projectId": "12370191986568299920",
+  "projectTitle": "Texas Covenant Home Inspections",
+  "downloadedAt": "2026-06-24",
+  "screens": [
+    {
+      "title": "About (Updated Gold) - Texas Covenant Home Inspections",
+      "id": "8034c212d27c467fbfe55961d55cd9d6",
+      "folder": "about-updated-gold",
+      "width": 2560,
+      "height": 6122
+    },
+    {
+      "title": "Home (Updated Gold) - Texas Covenant Home Inspections",
+      "id": "fbae7ebca92f4b6fb48dab75a4bb4ebf",
+      "folder": "home-updated-gold",
+      "width": 2560,
+      "height": 4054
+    },
+    {
+      "title": "Contact (Updated Gold) - Texas Covenant Home Inspections",
+      "id": "5bd7a43408cb4e4b8824ecd751341f83",
+      "folder": "contact-updated-gold",
+      "width": 2560,
+      "height": 2224
+    },
+    {
+      "title": "Design System",
+      "id": "asset-stub-assets_bd5b2205488a4cdf97e48f9c934cd7dc",
+      "folder": "design-system",
+      "note": "Design system assets are design tokens and guidelines (design.md), not HTML screens. No hosted screenshot URL is provided by the Stitch API for design system instances."
+    }
+  ]
+}

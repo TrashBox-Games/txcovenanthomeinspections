@@ -1,0 +1,15 @@
+{
+  "id": "assets/bd5b2205488a4cdf97e48f9c934cd7dc",
+  "stitchInstanceId": "asset-stub-assets_bd5b2205488a4cdf97e48f9c934cd7dc",
+  "displayName": "Stately Professional",
+  "version": "1",
+  "projectId": "12370191986568299920",
+  "projectTitle": "Texas Covenant Home Inspections",
+  "overridePrimaryColor": "#0c3559",
+  "overrideSecondaryColor": "#b88935",
+  "overrideTertiaryColor": "#f8f9fa",
+  "overrideNeutralColor": "#4a5568",
+  "headlineFontFamily": "Manrope",
+  "bodyFontFamily": "Inter",
+  "labelFontFamily": "Inter"
+}
