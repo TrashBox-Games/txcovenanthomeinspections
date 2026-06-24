@@ -22,4 +22,15 @@ describe("NavLink", () => {
     const link = screen.getByRole("link", { name: /about/i });
     expect(link).not.toHaveClass("border-tertiary");
   });
+
+  it("renders stacked variant with gold underline when active", () => {
+    render(
+      <NavLink href="/" isActive variant="stacked">
+        Home
+      </NavLink>,
+    );
+    const link = screen.getByRole("link", { name: /home/i });
+    expect(link).toHaveClass("border-b-2");
+    expect(link).toHaveClass("border-gold");
+  });
 });
