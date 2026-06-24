@@ -1,20 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/atoms/Button/Button";
 import { HERO_IMAGE, SITE } from "@/lib/constants";
 import { fadeIn, staggerContainer } from "@/lib/motion";
 
 export function HeroSection() {
   return (
-    <section className="relative flex h-[600px] w-full items-center justify-center">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
-        role="img"
-        aria-label="Modern Texas home exterior on a sunny day"
+    <section className="relative flex h-[600px] w-full items-center justify-center overflow-hidden bg-primary">
+      <Image
+        src={HERO_IMAGE}
+        alt="Modern home exterior with landscaped yard"
+        fill
+        priority
+        className="object-cover object-center"
+        sizes="100vw"
       />
-      <div className="absolute inset-0 bg-primary/60" />
+      <div className="absolute inset-0 bg-primary/60" aria-hidden />
 
       <motion.div
         className="container-site relative z-10 flex flex-col items-center text-center"

@@ -28,8 +28,7 @@ export const FOOTER_LINKS = [
   { label: "Privacy Policy", href: "#" },
 ] as const;
 
-export const HERO_IMAGE =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAoywBbVgTjwl53s2io_2xxKsK6cbaMuF3OTAYduUxhE5hNPpysw29uSpvyL15QRoC2unpqeZ_JEa7WkMyLCUi0yOiXr6-pZW8oj28uWChvZ9lAII1n7rpylNbUIKVben-Ku_n2XQD9gO25ZrLTq3AAk-mq0U_ckLv0z9QFJXXXCqz5OUddA3M4lOdOJ16-5GACtckAVP8TM2L7-V2SSlElhHIHMELEvqKdEp6f52o9bwmoJuCLix_BGakhHIJsS6O3fGW62Vh_HGqo";
+export const HERO_IMAGE = "/images/hero.jpg";
 
 export const JOEL_PORTRAIT =
   "https://lh3.googleusercontent.com/aida/AP1WRLu5WHEiw80d0wQb5yskLunbsTSXubS9ebXdsLXquklTUTOtIVoJinHeTx3yUaIITg3EmlB5WSeFnm6qHaxWeY_CggNkPEBRBjL5FcjgTJYs0Z8mUnaXAtBOvD9mK7Hcz3p_UFRb33mrdwxaacMKdxJBiPe7CYZurF0ZAVtFIWifjUeAbWHONvFeSTfhGf3-hCirKO0LCGEjbkyjfzdmASXLa9Xk5pD-9oS5X_JPO18BM25lXDoECCQw2B6k";
