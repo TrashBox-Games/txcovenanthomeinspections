@@ -21,7 +21,7 @@ export const SERVICES: Service[] = [
     title: "Structural",
     shortDescription:
       "Evaluation of the foundation, framing, roof structure, and load-bearing components.",
-    image: "/images/services/roofing.jpg",
+    image: "/images/services/roofing.webp",
     imageAlt: "Roof and structural components inspected during a home inspection",
     overview:
       "A home's structure is what everything else depends on. I inspect the foundation, framing, roof structure, and other load-bearing components to identify signs of movement, damage, or deterioration that could affect safety and long-term value.",
@@ -58,7 +58,7 @@ export const SERVICES: Service[] = [
     title: "Electrical",
     shortDescription:
       "Detailed review of panels, wiring, outlets, and safety compliance.",
-    image: "/images/services/electrical.png",
+    image: "/images/services/electrical.webp",
     imageAlt: "Electrical panel inspected during a home inspection",
     overview:
       "Electrical problems pose serious safety risks. I inspect the main service panel, branch circuits, and visible wiring to identify hazards, outdated components, and code concerns that could affect your family's safety.",
@@ -95,7 +95,7 @@ export const SERVICES: Service[] = [
     title: "HVAC",
     shortDescription:
       "Assessment of heating, cooling, ductwork, and ventilation performance.",
-    image: "/images/services/hvac.jpg",
+    image: "/images/services/hvac.webp",
     imageAlt:
       "Outdoor HVAC unit with rooftop fans inspected during a home inspection",
     overview:
@@ -133,7 +133,7 @@ export const SERVICES: Service[] = [
     title: "Plumbing",
     shortDescription:
       "Thorough evaluation of pipes, fixtures, water heaters, and drainage systems.",
-    image: "/images/services/plumbing.jpg",
+    image: "/images/services/plumbing.webp",
     imageAlt: "Plumbing pipes and fixtures during a home inspection",
     overview:
       "Water damage and plumbing failures are among the most costly issues a homeowner can face. My plumbing inspection covers the full water supply and waste systems so you know exactly what condition they are in before you buy or maintain your home.",
@@ -170,7 +170,7 @@ export const SERVICES: Service[] = [
     title: "Appliances",
     shortDescription:
       "Operational checks of built-in and included kitchen and laundry appliances.",
-    image: "/images/services/appliances.jpg",
+    image: "/images/services/appliances.webp",
     imageAlt:
       "Modern gas cooktop with a lit burner during an appliance inspection",
     overview:

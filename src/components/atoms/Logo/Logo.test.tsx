@@ -14,6 +14,12 @@ describe("Logo", () => {
     expect(screen.getByRole("link")).toHaveAttribute("href", "/");
   });
 
+  it("lazy-loads the logo so it does not compete with the hero image", () => {
+    render(<Logo />);
+
+    expect(screen.getByRole("img")).toHaveAttribute("loading", "lazy");
+  });
+
   it("applies size classes to the logo image", () => {
     const { rerender } = render(<Logo size="sm" />);
     expect(screen.getByRole("img")).toHaveClass("h-14");

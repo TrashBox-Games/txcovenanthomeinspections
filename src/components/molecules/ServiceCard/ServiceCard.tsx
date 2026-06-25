@@ -34,8 +34,10 @@ export function ServiceCard({
         src={imageSrc}
         alt={imageAlt}
         fill
+        loading="lazy"
+        fetchPriority="low"
         className="object-cover transition-transform duration-300 group-hover:scale-110"
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
       <div className="absolute right-0 bottom-0 left-0 p-stack-md">

@@ -21,9 +21,9 @@ export const FOOTER_LINKS = [
   { label: "Privacy Policy", href: "#" },
 ] as const;
 
-export const HERO_IMAGE = "/images/hero.jpg";
+export const HERO_IMAGE = "/images/hero.webp";
 
-export const JOEL_PORTRAIT = "/images/joelpiercy.png";
+export const JOEL_PORTRAIT = "/images/joelpiercy.webp";
 
 export const FAVICON = {
   path: "/images/favicon",

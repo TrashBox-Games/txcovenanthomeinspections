@@ -26,7 +26,7 @@ describe("MeetJoelSection", () => {
     const image = screen.getByRole("img", {
       name: /portrait of joel piercy/i,
     });
-    expect(image.getAttribute("src")).toContain("joelpiercy.png");
+    expect(image.getAttribute("src")).toContain("joelpiercy.webp");
   });
 
   it("places the portrait on the left and text on the right on desktop", () => {

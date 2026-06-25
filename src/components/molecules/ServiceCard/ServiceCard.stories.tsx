@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     title: "HVAC",
-    imageSrc: "/images/services/hvac.jpg",
+    imageSrc: "/images/services/hvac.webp",
     imageAlt: "HVAC system inspected during a home inspection",
     href: "/services/hvac",
   },
@@ -29,7 +29,7 @@ export const Default: Story = {
 export const WithoutLink: Story = {
   args: {
     title: "Plumbing",
-    imageSrc: "/images/services/plumbing.jpg",
+    imageSrc: "/images/services/plumbing.webp",
     imageAlt: "Plumbing fixtures inspected during a home inspection",
   },
   decorators: [

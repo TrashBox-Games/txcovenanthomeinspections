@@ -8,17 +8,17 @@ describe("services", () => {
   it("returns a service by slug", () => {
     const service = getServiceBySlug("plumbing");
     expect(service?.title).toBe("Plumbing");
-    expect(service?.image).toBe("/images/services/plumbing.jpg");
+    expect(service?.image).toBe("/images/services/plumbing.webp");
   });
 
   it("uses the appliances image for the appliances service", () => {
     const service = getServiceBySlug("appliances");
-    expect(service?.image).toBe("/images/services/appliances.jpg");
+    expect(service?.image).toBe("/images/services/appliances.webp");
   });
 
   it("uses the hvac image for the hvac service", () => {
     const service = getServiceBySlug("hvac");
-    expect(service?.image).toBe("/images/services/hvac.jpg");
+    expect(service?.image).toBe("/images/services/hvac.webp");
   });
 
   it("returns undefined for an unknown slug", () => {

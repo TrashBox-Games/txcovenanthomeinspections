@@ -23,7 +23,7 @@ export function Logo({
   return (
     <Link href="/" className={cn("inline-flex items-center", className)}>
       <Image
-        src="/images/LOGO.png"
+        src="/images/LOGO.webp"
         alt={`${SITE.name} Logo`}
         width={200}
         height={80}
@@ -33,7 +33,6 @@ export function Logo({
           variant === "footer" &&
             "rounded-sm bg-surface-container-lowest p-1",
         )}
-        priority
       />
     </Link>
   );
