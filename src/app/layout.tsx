@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
+import { faviconMetadata } from "@/lib/favicon";
 import { SITE } from "@/lib/constants";
 import "@/styles/globals.css";
 
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   },
   description:
     "Professional home inspections in the Greater Houston Area. Inspecting with integrity, serving with purpose.",
+  icons: faviconMetadata,
 };
 
 export default function RootLayout({

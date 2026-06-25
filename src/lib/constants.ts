@@ -24,3 +24,13 @@ export const FOOTER_LINKS = [
 export const HERO_IMAGE = "/images/hero.jpg";
 
 export const JOEL_PORTRAIT = "/images/joelpiercy.png";
+
+export const FAVICON = {
+  path: "/images/favicon",
+  ico: "/images/favicon/favicon.ico",
+  png16: "/images/favicon/favicon-16x16.png",
+  png32: "/images/favicon/favicon-32x32.png",
+  apple: "/images/favicon/apple-touch-icon.png",
+  android192: "/images/favicon/android-chrome-192x192.png",
+  android512: "/images/favicon/android-chrome-512x512.png",
+} as const;
