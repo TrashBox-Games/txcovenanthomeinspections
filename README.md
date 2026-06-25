@@ -54,7 +54,7 @@ pnpm dev
 | `pnpm lint` | Lint with ESLint |
 | `pnpm test` | Run unit tests (Vitest) |
 | `pnpm test:e2e` | Run E2E tests (Playwright) |
-| `pnpm storybook` | Start Storybook |
+| `pnpm storybook` | Start Storybook (component library on port 6006) |
 | `pnpm format` | Format code with Prettier |
 
 ## Creating a New Business Site
