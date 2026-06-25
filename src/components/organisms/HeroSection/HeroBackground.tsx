@@ -1,18 +1,17 @@
-import Image from "next/image";
 import { HERO_IMAGE } from "@/lib/constants";
+import { withBasePath } from "@/lib/favicon";
 
 export function HeroBackground() {
+  const heroSrc = withBasePath(HERO_IMAGE);
+
   return (
-    <>
-      <Image
-        src={HERO_IMAGE}
-        alt="Modern home exterior with landscaped yard"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-primary/60" aria-hidden />
-    </>
+    <img
+      src={heroSrc}
+      alt="Modern home exterior with landscaped yard"
+      fetchPriority="high"
+      loading="eager"
+      decoding="sync"
+      className="absolute inset-0 h-full w-full object-cover object-center"
+    />
   );
 }

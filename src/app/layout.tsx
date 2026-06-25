@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
-import { faviconMetadata } from "@/lib/favicon";
+import { HeroImagePreload } from "@/components/organisms/HeroSection/HeroImagePreload";
 import { SITE } from "@/lib/constants";
+import { faviconMetadata } from "@/lib/favicon";
 import "@/styles/globals.css";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -29,6 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <HeroImagePreload />
+      </head>
       <body
         className={`${beVietnamPro.variable} ${GeistSans.variable} font-body antialiased`}
       >
