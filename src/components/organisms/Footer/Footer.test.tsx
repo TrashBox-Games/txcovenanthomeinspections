@@ -18,4 +18,12 @@ describe("Footer", () => {
       screen.getByRole("link", { name: /trashbox llc/i }),
     ).toHaveAttribute("href", "https://trashbox.io/");
   });
+
+  it("styles the Trashbox LLC link in white", () => {
+    render(<Footer />);
+
+    expect(screen.getByRole("link", { name: /trashbox llc/i })).toHaveClass(
+      "text-on-primary",
+    );
+  });
 });

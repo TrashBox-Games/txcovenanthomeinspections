@@ -71,7 +71,7 @@ export function Footer() {
               href={SITE.developer.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-tertiary-fixed"
+              className="text-on-primary opacity-100 transition-colors hover:text-tertiary-fixed"
             >
               {SITE.developer.name}
             </a>
