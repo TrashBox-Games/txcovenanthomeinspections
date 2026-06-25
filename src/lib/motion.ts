@@ -24,6 +24,27 @@ export const staggerContainer: Variants = {
   },
 };
 
+export const wordRevealEase = [0.33, 1, 0.68, 1] as const;
+export const wordRevealDuration = 0.7;
+
+export const wordReveal: Variants = {
+  hidden: { y: "100%" },
+  visible: {
+    y: 0,
+    transition: { duration: wordRevealDuration, ease: wordRevealEase },
+  },
+};
+
+export const wordRevealContainer = (
+  stagger = 0.04,
+  delay = 0.1,
+): Variants => ({
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: stagger, delayChildren: delay },
+  },
+});
+
 export const scaleOnHover = {
   whileHover: { scale: 1.03 },
   transition: { type: "spring" as const, stiffness: 400, damping: 17 },
