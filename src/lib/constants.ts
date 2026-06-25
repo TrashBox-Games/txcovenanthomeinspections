@@ -9,7 +9,7 @@ export const SITE = {
   location: "Greater Houston Area",
   copyright: `© ${new Date().getFullYear()} Texas Covenant Home Inspections. All rights reserved.`,
   developer: {
-    name: "Trashbox LLC",
+    name: "Trashbox",
     href: "https://trashbox.io/",
   },
 } as const;
