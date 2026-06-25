@@ -10,7 +10,7 @@ A template repository for quickly spinning up small business websites.
 - **Component Dev:** [Storybook](https://storybook.js.org/)
 - **Unit Testing:** [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/react)
 - **E2E Testing:** [Playwright](https://playwright.dev/)
-- **Deployment:** [Vercel](https://vercel.com/)
+- **Deployment:** [GitHub Pages](https://pages.github.com/) via GitHub Actions
 - **Package Manager:** [pnpm](https://pnpm.io/)
 - **Node Version:** managed via [fnm](https://github.com/Schniz/fnm) (`.node-version`)
 
@@ -63,4 +63,33 @@ pnpm dev
 2. Update `src/app/layout.tsx` with your business name and metadata
 3. Add your components in `src/components/`
 4. Add shadcn/ui components: `pnpm dlx shadcn@latest add button`
-5. Deploy to Vercel
+5. Deploy to GitHub Pages (see below)
+
+## Deploy to GitHub Pages
+
+This site is a static Next.js export deployed automatically when you push to `main`.
+
+### One-time setup
+
+1. Push this repo to GitHub.
+2. Go to **Settings → Pages** in the repository.
+3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+4. Go to **Settings → Secrets and variables → Actions** and add a repository secret:
+   - `NEXT_PUBLIC_TRASHBOX_API_KEY` — your Trashbox form API key
+5. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually).
+
+The site will be published at:
+
+`https://trashbox-games.github.io/txcovenanthomeinspections/`
+
+### Custom domain
+
+If you add a custom domain in **Settings → Pages**, remove `NEXT_PUBLIC_BASE_PATH` from the workflow's build step (or set it to an empty string) so routes are served from the domain root.
+
+### Local dev with the Pages base path
+
+To match production routing locally:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/txcovenanthomeinspections pnpm dev
+```
