@@ -82,9 +82,15 @@ The site will be published at:
 
 `https://trashbox-games.github.io/txcovenanthomeinspections/`
 
+The deploy workflow uses `actions/configure-pages` to set the correct `basePath` automatically. That keeps CSS and JavaScript loading on both the `github.io` project URL and a custom domain (where `basePath` is empty).
+
 ### Custom domain
 
-If you add a custom domain in **Settings → Pages**, remove `NEXT_PUBLIC_BASE_PATH` from the workflow's build step (or set it to an empty string) so routes are served from the domain root.
+1. Add DNS records and set the domain under **Settings → Pages**.
+2. Push to `main` — the workflow detects the custom domain and builds with an empty `basePath`.
+3. Add the custom domain to your Trashbox API key allowed origins.
+
+You do not need to edit the workflow when switching to a custom domain.
 
 ### Local dev with the Pages base path
 
