@@ -2,7 +2,7 @@
 
 import { Fragment } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { wordReveal, wordRevealContainer } from "@/lib/motion";
+import { createWordReveal, wordReveal, wordRevealContainer } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 interface MaskedTextProps {
@@ -10,6 +10,7 @@ interface MaskedTextProps {
   className?: string;
   stagger?: number;
   delay?: number;
+  duration?: number;
 }
 
 function splitIntoWords(text: string): string[] {
@@ -21,9 +22,11 @@ export function MaskedText({
   className,
   stagger = 0.04,
   delay = 0.1,
+  duration,
 }: MaskedTextProps) {
   const prefersReducedMotion = useReducedMotion();
   const words = splitIntoWords(text);
+  const revealVariants = duration ? createWordReveal(duration) : wordReveal;
 
   if (prefersReducedMotion) {
     return <span className={className}>{text}</span>;
@@ -43,7 +46,7 @@ export function MaskedText({
             data-testid="word-mask"
           >
             <motion.span
-              variants={wordReveal}
+              variants={revealVariants}
               className="inline-block whitespace-nowrap"
             >
               {word}

@@ -9,13 +9,17 @@ export const fadeInUp: Variants = {
   },
 };
 
-export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+export function createFadeIn(duration = 0.5): Variants {
+  return {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration, ease: "easeOut" },
+    },
+  };
+}
+
+export const fadeIn: Variants = createFadeIn();
 
 export const staggerContainer: Variants = {
   hidden: {},
@@ -27,13 +31,17 @@ export const staggerContainer: Variants = {
 export const wordRevealEase = [0.33, 1, 0.68, 1] as const;
 export const wordRevealDuration = 0.7;
 
-export const wordReveal: Variants = {
-  hidden: { y: "100%" },
-  visible: {
-    y: 0,
-    transition: { duration: wordRevealDuration, ease: wordRevealEase },
-  },
-};
+export function createWordReveal(duration = wordRevealDuration): Variants {
+  return {
+    hidden: { y: "100%" },
+    visible: {
+      y: 0,
+      transition: { duration, ease: wordRevealEase },
+    },
+  };
+}
+
+export const wordReveal: Variants = createWordReveal();
 
 export const wordRevealContainer = (
   stagger = 0.04,

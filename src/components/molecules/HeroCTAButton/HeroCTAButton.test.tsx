@@ -18,4 +18,18 @@ describe("HeroCTAButton", () => {
     ).toHaveAttribute("href", "/contact");
     expect(screen.getAllByTestId("word-mask")).toHaveLength(3);
   });
+
+  it("accepts a custom reveal duration", () => {
+    render(
+      <HeroCTAButton
+        href="/contact"
+        text="Schedule Your Inspection"
+        delay={0.1}
+        wordStagger={0.04}
+        duration={1.2}
+      />,
+    );
+
+    expect(screen.getByTestId("hero-cta-reveal")).toBeInTheDocument();
+  });
 });

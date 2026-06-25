@@ -5,7 +5,7 @@ import Image from "next/image";
 import { HeroCTAButton } from "@/components/molecules/HeroCTAButton/HeroCTAButton";
 import { MaskedText } from "@/components/molecules/MaskedText/MaskedText";
 import { HERO_IMAGE, SITE } from "@/lib/constants";
-import { fadeIn, wordRevealDuration } from "@/lib/motion";
+import { createFadeIn, wordRevealDuration } from "@/lib/motion";
 
 const HERO_HEADLINE_LINES = [
   "Inspecting with Integrity",
@@ -13,8 +13,17 @@ const HERO_HEADLINE_LINES = [
 ] as const;
 
 const HERO_CTA_TEXT = "Schedule Your Inspection";
-const WORD_STAGGER = 0.04;
+const WORD_STAGGER = 0.01;
 const WORD_DELAY = 0.1;
+
+// Tagline animation
+const TAGLINE_DURATION = 1.2;
+const TAGLINE_DELAY_OFFSET = 1.5;
+
+// Button animation
+const BUTTON_WORD_STAGGER = 0.12;
+const BUTTON_REVEAL_DURATION = 0.9;
+const BUTTON_DELAY = WORD_DELAY + 0.5;
 
 function countWords(text: string): number {
   return text.split(" ").length;
@@ -38,8 +47,7 @@ function headlineAnimationEnd(): number {
   return WORD_DELAY + (totalWords - 1) * WORD_STAGGER + wordRevealDuration;
 }
 
-const TAGLINE_DELAY = headlineAnimationEnd() - 0.1;
-const BUTTON_DELAY = headlineAnimationEnd() + 0.08;
+const TAGLINE_DELAY = headlineAnimationEnd() + TAGLINE_DELAY_OFFSET;
 
 export function HeroSection() {
   return (
@@ -71,8 +79,8 @@ export function HeroSection() {
         <motion.p
           initial="hidden"
           animate="visible"
-          variants={fadeIn}
-          transition={{ delay: TAGLINE_DELAY, duration: 0.75, ease: "easeOut" }}
+          variants={createFadeIn(TAGLINE_DURATION)}
+          transition={{ delay: TAGLINE_DELAY }}
           className="mb-stack-lg max-w-2xl text-lg leading-7 text-primary-fixed-dim"
         >
           {SITE.tagline}
@@ -81,7 +89,8 @@ export function HeroSection() {
           href="/contact"
           text={HERO_CTA_TEXT}
           delay={BUTTON_DELAY}
-          wordStagger={WORD_STAGGER}
+          wordStagger={BUTTON_WORD_STAGGER}
+          duration={BUTTON_REVEAL_DURATION}
         />
       </div>
     </section>

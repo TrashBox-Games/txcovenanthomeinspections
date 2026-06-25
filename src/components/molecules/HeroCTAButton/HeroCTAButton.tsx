@@ -10,6 +10,7 @@ interface HeroCTAButtonProps {
   text: string;
   delay: number;
   wordStagger: number;
+  duration?: number;
 }
 
 export function HeroCTAButton({
@@ -17,6 +18,7 @@ export function HeroCTAButton({
   text,
   delay,
   wordStagger,
+  duration = wordRevealDuration,
 }: HeroCTAButtonProps) {
   return (
     <motion.div
@@ -26,12 +28,17 @@ export function HeroCTAButton({
       animate={{ clipPath: "inset(0 0% 0 0)" }}
       transition={{
         delay,
-        duration: wordRevealDuration,
+        duration,
         ease: wordRevealEase,
       }}
     >
       <Button href={href} variant="gold" size="lg" className="w-fit">
-        <MaskedText text={text} stagger={wordStagger} delay={delay + 0.05} />
+        <MaskedText
+          text={text}
+          stagger={wordStagger}
+          delay={delay + 0.05}
+          duration={duration}
+        />
       </Button>
     </motion.div>
   );
