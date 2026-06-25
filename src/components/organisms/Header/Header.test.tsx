@@ -21,22 +21,28 @@ describe("Header", () => {
     expect(screen.getByText("(832) 470-5230")).toBeInTheDocument();
   });
 
-  it("renders call now scheduling text next to the phone button", () => {
+  it("renders call now scheduling text as a phone link next to the phone button", () => {
     render(<Header />);
 
-    expect(screen.getByText(/call now to schedule/i)).toBeInTheDocument();
+    const scheduleLink = screen.getByRole("link", {
+      name: /call now to schedule/i,
+    });
+
+    expect(scheduleLink).toHaveAttribute("href", "tel:8324705230");
   });
 
   it("matches navigation link text size to the call now scheduling text", () => {
     render(<Header />);
 
     const aboutLink = screen.getByRole("link", { name: /^about$/i });
-    const scheduleText = screen.getByText(/call now to schedule/i);
+    const scheduleLink = screen.getByRole("link", {
+      name: /call now to schedule/i,
+    });
 
     expect(aboutLink).toHaveClass("text-base");
     expect(aboutLink).toHaveClass("md:text-lg");
-    expect(scheduleText).toHaveClass("text-base");
-    expect(scheduleText).toHaveClass("md:text-lg");
+    expect(scheduleLink).toHaveClass("text-base");
+    expect(scheduleLink).toHaveClass("md:text-lg");
   });
 
   it("opens the mobile menu from the hamburger button", () => {

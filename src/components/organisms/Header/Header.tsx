@@ -46,9 +46,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-4">
-          <span className="hidden text-base font-bold text-gold md:inline md:text-lg">
+          <a
+            href={SITE.phoneHref}
+            className="hidden text-base font-bold text-gold transition-colors hover:text-gold-hover md:inline md:text-lg"
+          >
             Call Now To Schedule!
-          </span>
+          </a>
           <Button
             href={SITE.phoneHref}
             variant="primary"
