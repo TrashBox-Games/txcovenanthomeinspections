@@ -21,12 +21,14 @@ export function WhyChooseCard({
   return (
     <motion.div
       className={cn(
-        "rounded-xl border border-outline-variant bg-surface-container-lowest p-stack-lg text-center shadow-sm",
+        "rounded-xl border border-outline-variant border-t-4 border-t-gold bg-surface-container-lowest p-stack-lg text-center shadow-ambient",
         className,
       )}
       {...scaleOnHover}
     >
-      <Icon className="mx-auto mb-stack-md h-12 w-12 text-gold" />
+      <span className="mb-stack-sm inline-flex rounded-full bg-gold/15 p-4 text-gold">
+        <Icon className="h-12 w-12" />
+      </span>
       <h3 className="mb-stack-sm font-headline text-xl font-semibold text-primary">
         {title}
       </h3>

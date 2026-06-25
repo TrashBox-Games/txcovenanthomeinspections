@@ -23,15 +23,12 @@ export function NavLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "text-sm font-medium tracking-wider transition-colors duration-200",
+        "font-medium tracking-wider transition-colors duration-200",
         variant === "inline" &&
-          "flex h-full items-center",
+          "flex h-full items-center text-base md:text-lg",
         variant === "stacked" &&
-          "block border-b px-4 py-4",
-        isActive &&
-          (variant === "stacked"
-            ? "border-b-2 border-gold font-semibold text-primary"
-            : "border-b-2 border-tertiary font-semibold text-primary"),
+          "block border-b px-4 py-4 text-sm",
+        isActive && "border-b-2 border-gold font-semibold text-gold",
         !isActive &&
           (variant === "stacked"
             ? "border-outline-variant text-on-surface-variant hover:border-gold hover:text-primary"

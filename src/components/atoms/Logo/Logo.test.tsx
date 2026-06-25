@@ -13,4 +13,15 @@ describe("Logo", () => {
     render(<Logo />);
     expect(screen.getByRole("link")).toHaveAttribute("href", "/");
   });
+
+  it("applies size classes to the logo image", () => {
+    const { rerender } = render(<Logo size="sm" />);
+    expect(screen.getByRole("img")).toHaveClass("h-14");
+
+    rerender(<Logo size="md" />);
+    expect(screen.getByRole("img")).toHaveClass("h-20");
+
+    rerender(<Logo size="lg" />);
+    expect(screen.getByRole("img")).toHaveClass("h-24");
+  });
 });

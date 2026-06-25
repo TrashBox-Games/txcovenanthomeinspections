@@ -21,6 +21,24 @@ describe("Header", () => {
     expect(screen.getByText("(832) 470-5230")).toBeInTheDocument();
   });
 
+  it("renders call now scheduling text next to the phone button", () => {
+    render(<Header />);
+
+    expect(screen.getByText(/call now to schedule/i)).toBeInTheDocument();
+  });
+
+  it("matches navigation link text size to the call now scheduling text", () => {
+    render(<Header />);
+
+    const aboutLink = screen.getByRole("link", { name: /^about$/i });
+    const scheduleText = screen.getByText(/call now to schedule/i);
+
+    expect(aboutLink).toHaveClass("text-base");
+    expect(aboutLink).toHaveClass("md:text-lg");
+    expect(scheduleText).toHaveClass("text-base");
+    expect(scheduleText).toHaveClass("md:text-lg");
+  });
+
   it("opens the mobile menu from the hamburger button", () => {
     render(<Header />);
     fireEvent.click(screen.getByRole("button", { name: /open menu/i }));
@@ -28,7 +46,7 @@ describe("Header", () => {
       screen.getByRole("navigation", { name: /mobile/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getAllByRole("link", { name: /^plumbing$/i }).length,
+      screen.getAllByRole("link", { name: /^structural$/i }).length,
     ).toBeGreaterThan(0);
   });
 });

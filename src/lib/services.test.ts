@@ -1,4 +1,8 @@
-import { getAllServiceSlugs, getServiceBySlug } from "./services";
+import {
+  getAllServiceSlugs,
+  getServiceBySlug,
+  SERVICES,
+} from "./services";
 
 describe("services", () => {
   it("returns a service by slug", () => {
@@ -8,10 +12,36 @@ describe("services", () => {
   });
 
   it("returns undefined for an unknown slug", () => {
-    expect(getServiceBySlug("hvac")).toBeUndefined();
+    expect(getServiceBySlug("roofing")).toBeUndefined();
   });
 
-  it("lists all service slugs", () => {
-    expect(getAllServiceSlugs()).toEqual(["plumbing", "electrical", "roofing"]);
+  it("lists all service slugs in display order", () => {
+    expect(getAllServiceSlugs()).toEqual([
+      "structural",
+      "electrical",
+      "hvac",
+      "plumbing",
+      "appliances",
+    ]);
+  });
+
+  it("defines the five core inspection services", () => {
+    expect(SERVICES.map((service) => service.title)).toEqual([
+      "Structural",
+      "Electrical",
+      "HVAC",
+      "Plumbing",
+      "Appliances",
+    ]);
+  });
+
+  it("defines subsections with anchor ids for each service", () => {
+    const structural = getServiceBySlug("structural");
+
+    expect(structural?.sections).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ id: "roofing", label: "Roofing" }),
+      ]),
+    );
   });
 });

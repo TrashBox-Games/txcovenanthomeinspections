@@ -1,12 +1,14 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Phone, X } from "lucide-react";
-import { useEffect } from "react";
+import { ChevronDown, Phone, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/atoms/Button/Button";
 import { NavLink } from "@/components/molecules/NavLink/NavLink";
 import { SITE } from "@/lib/constants";
+import type { NavChildItem } from "@/lib/navigation";
 import { isNavItemActive, NAV_ITEMS } from "@/lib/navigation";
+import { cn } from "@/lib/utils";
 
 interface MobileNavMenuProps {
   isOpen: boolean;
@@ -14,11 +16,80 @@ interface MobileNavMenuProps {
   activePath: string;
 }
 
+function MobileServiceNavItem({
+  child,
+  activePath,
+  isExpanded,
+  onToggle,
+  onClose,
+}: {
+  child: NavChildItem;
+  activePath: string;
+  isExpanded: boolean;
+  onToggle: () => void;
+  onClose: () => void;
+}) {
+  const hasSubsections = Boolean(child.children?.length);
+
+  return (
+    <div>
+      <div className="flex items-stretch border-b border-outline-variant">
+        <NavLink
+          href={child.href}
+          isActive={activePath === child.href}
+          variant="stacked"
+          className={cn(
+            "text-xs font-semibold",
+            hasSubsections && "flex-1 border-b-0",
+          )}
+          onClick={onClose}
+        >
+          {child.label}
+        </NavLink>
+        {hasSubsections ? (
+          <button
+            type="button"
+            aria-expanded={isExpanded}
+            aria-label={`${isExpanded ? "Hide" : "Show"} ${child.label} sections`}
+            onClick={onToggle}
+            className="inline-flex w-12 shrink-0 items-center justify-center border-b border-outline-variant text-on-surface-variant transition-colors hover:bg-surface-container-low hover:text-primary"
+          >
+            <ChevronDown
+              className={cn(
+                "h-4 w-4 transition-transform",
+                isExpanded && "rotate-180",
+              )}
+            />
+          </button>
+        ) : null}
+      </div>
+      {isExpanded && hasSubsections ? (
+        <div className="pl-4">
+          {child.children?.map((subItem) => (
+            <NavLink
+              key={subItem.href}
+              href={subItem.href}
+              isActive={false}
+              variant="stacked"
+              className="text-xs text-on-surface-variant"
+              onClick={onClose}
+            >
+              {subItem.label}
+            </NavLink>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 export function MobileNavMenu({
   isOpen,
   onClose,
   activePath,
 }: MobileNavMenuProps) {
+  const [expandedServices, setExpandedServices] = useState<string[]>([]);
+
   useEffect(() => {
     if (!isOpen) return;
 
@@ -34,6 +105,20 @@ export function MobileNavMenu({
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setExpandedServices([]);
+    }
+  }, [isOpen]);
+
+  function toggleService(href: string) {
+    setExpandedServices((current) =>
+      current.includes(href)
+        ? current.filter((item) => item !== href)
+        : [...current, href],
+    );
+  }
 
   return (
     <AnimatePresence>
@@ -87,16 +172,14 @@ export function MobileNavMenu({
                     </NavLink>
                     <div className="pl-4">
                       {item.children.map((child) => (
-                        <NavLink
+                        <MobileServiceNavItem
                           key={child.href}
-                          href={child.href}
-                          isActive={activePath === child.href}
-                          variant="stacked"
-                          className="text-xs"
-                          onClick={onClose}
-                        >
-                          {child.label}
-                        </NavLink>
+                          child={child}
+                          activePath={activePath}
+                          isExpanded={expandedServices.includes(child.href)}
+                          onToggle={() => toggleService(child.href)}
+                          onClose={onClose}
+                        />
                       ))}
                     </div>
                   </div>

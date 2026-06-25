@@ -9,17 +9,18 @@ import { staggerContainer } from "@/lib/motion";
 
 export function ServicesSection() {
   return (
-    <section className="bg-surface py-stack-xl">
+    <section className="border-y border-outline-variant bg-surface-container-low py-stack-xl">
       <div className="container-site">
         <FadeIn>
           <SectionHeader
-            title="Our Specialized Services"
-            description="Comprehensive inspections for every major system of your home."
+            title="What We Inspect"
+            description="We inspect all aspects of your home, from the big and small parts to the systems and structures."
+            showAccent
           />
         </FadeIn>
 
         <motion.div
-          className="grid grid-cols-1 gap-gutter md:grid-cols-3"
+          className="flex flex-wrap justify-center gap-gutter"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
@@ -28,6 +29,7 @@ export function ServicesSection() {
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.slug}
+              className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
               variants={{
                 hidden: { opacity: 0, y: 24 },
                 visible: {

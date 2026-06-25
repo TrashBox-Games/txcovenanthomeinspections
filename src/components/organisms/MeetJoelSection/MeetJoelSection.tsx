@@ -11,13 +11,13 @@ export function MeetJoelSection() {
   return (
     <section className="container-site py-stack-xl">
       <div className="grid grid-cols-1 items-center gap-gutter md:grid-cols-12">
-        <FadeIn className="order-2 flex flex-col gap-stack-lg md:order-1 md:col-span-6">
+        <FadeIn className="order-2 flex flex-col gap-stack-lg md:order-2 md:col-span-6 md:col-start-7">
           <div className="flex flex-col gap-stack-sm">
             <span className="text-sm font-semibold tracking-widest text-tertiary uppercase">
-              Our Inspector
+              Pastor & Home Inspector
             </span>
             <h1 className="font-headline text-[2rem] leading-10 font-bold text-primary md:text-5xl md:leading-14">
-              Meet Joel Piercy
+              Joel Piercy
             </h1>
           </div>
 
@@ -46,7 +46,7 @@ export function MeetJoelSection() {
         </FadeIn>
 
         <motion.div
-          className="order-1 md:order-2 md:col-span-5 md:col-start-8"
+          className="order-1 md:order-1 md:col-span-5 md:col-start-1"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -56,9 +56,9 @@ export function MeetJoelSection() {
             <Image
               src={JOEL_PORTRAIT}
               alt="Portrait of Joel Piercy, certified home inspector"
-              width={600}
-              height={600}
-              className="aspect-square w-full object-cover"
+              width={1086}
+              height={1448}
+              className="aspect-[1086/1448] w-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary/80 to-transparent p-stack-md pt-stack-xl">
               <div className="flex items-center gap-2 text-on-primary">

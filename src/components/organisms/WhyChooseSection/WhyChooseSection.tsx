@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Church, FileText, MapPin } from "lucide-react";
+import { BadgeCheck, FileText, MessageCircle } from "lucide-react";
 import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 import { SectionHeader } from "@/components/molecules/SectionHeader/SectionHeader";
 import { WhyChooseCard } from "@/components/molecules/WhyChooseCard/WhyChooseCard";
@@ -9,33 +9,35 @@ import { staggerContainer } from "@/lib/motion";
 
 const reasons = [
   {
-    icon: Church,
-    title: "Pastor's Integrity",
+    icon: MessageCircle,
+    title: "Personable",
     description:
-      "Honesty and transparency aren't just buzzwords; they are the foundation of everything we do.",
+      "Call or text anytime. I'll be there to answer your questions and help where you need it.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "Licensed Professional",
+    description:
+      "Licensed with the Texas Real Estate Commission (TREC) and the National Home Inspection Examination (NHIE).",
   },
   {
     icon: FileText,
     title: "Detailed Reports",
     description:
-      "Comprehensive, easy-to-understand reports delivered quickly to help you make informed decisions.",
-  },
-  {
-    icon: MapPin,
-    title: "Local Expertise",
-    description:
-      "Deep knowledge of Texas homes, common regional issues, and local building practices.",
+      "I deliver comprehensive, easy-to-understand reports quickly to help you make informed decisions.",
   },
 ];
 
 export function WhyChooseSection() {
   return (
-    <section className="border-y border-outline-variant bg-surface-container py-stack-xl">
+    <section className="bg-primary py-stack-xl">
       <div className="container-site">
         <FadeIn>
           <SectionHeader
             title="Why Choose Us"
-            description="We bring a unique blend of professional expertise and unwavering integrity to every home we inspect."
+            description="I bring a unique blend of professional expertise and unwavering integrity to every home I inspect."
+            variant="inverted"
+            showAccent
           />
         </FadeIn>
 

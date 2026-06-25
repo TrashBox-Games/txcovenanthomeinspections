@@ -23,14 +23,16 @@ export function FeatureCard({
   return (
     <motion.div
       className={cn(
-        "group rounded-xl border border-outline-variant bg-surface-container-lowest p-stack-md transition-colors hover:border-surface-tint",
+        "group h-full rounded-xl border border-outline-variant bg-surface-container-lowest p-stack-md shadow-ambient transition-colors hover:border-gold/40 hover:bg-primary-fixed/40",
         className,
       )}
       {...scaleOnHover}
     >
       {layout === "horizontal" ? (
-        <div className="flex items-start gap-stack-md">
-          <Icon className="h-8 w-8 shrink-0 text-gold transition-transform group-hover:scale-110" />
+        <div className="flex h-full items-center gap-stack-md">
+          <div className="inline-flex shrink-0 rounded-lg bg-gold/15 p-2">
+            <Icon className="h-8 w-8 shrink-0 text-gold transition-transform group-hover:scale-110" />
+          </div>
           <div>
             <h3 className="mb-stack-sm font-headline text-xl font-semibold text-primary">
               {title}
@@ -39,13 +41,15 @@ export function FeatureCard({
           </div>
         </div>
       ) : (
-        <>
-          <Icon className="mb-stack-sm h-8 w-8 text-gold transition-transform group-hover:scale-110" />
+        <div className="flex h-full flex-col">
+          <div className="mb-stack-sm inline-flex w-fit shrink-0 rounded-lg bg-gold/15 p-2">
+            <Icon className="h-8 w-8 shrink-0 text-gold transition-transform group-hover:scale-110" />
+          </div>
           <h3 className="mb-stack-sm font-headline text-xl font-semibold text-primary">
             {title}
           </h3>
           <p className="text-sm text-on-surface-variant">{description}</p>
-        </>
+        </div>
       )}
     </motion.div>
   );

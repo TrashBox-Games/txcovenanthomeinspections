@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
+import { AboutBioSection } from "@/components/organisms/AboutBioSection/AboutBioSection";
 import { CertificationsSection } from "@/components/organisms/CertificationsSection/CertificationsSection";
-import { CTASection } from "@/components/organisms/CTASection/CTASection";
-import { InspectionJourneySection } from "@/components/organisms/InspectionJourneySection/InspectionJourneySection";
-import { InspectionStandardsSection } from "@/components/organisms/InspectionStandardsSection/InspectionStandardsSection";
 import { MeetJoelSection } from "@/components/organisms/MeetJoelSection/MeetJoelSection";
-import { WhyChooseSection } from "@/components/organisms/WhyChooseSection/WhyChooseSection";
 import { SITE } from "@/lib/constants";
+import { getJoelBio } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About Joel Piercy",
@@ -16,11 +14,8 @@ export default function AboutPage() {
   return (
     <>
       <MeetJoelSection />
-      <WhyChooseSection />
-      <InspectionStandardsSection />
-      <InspectionJourneySection />
+      <AboutBioSection content={getJoelBio()} />
       <CertificationsSection />
-      <CTASection />
     </>
   );
 }

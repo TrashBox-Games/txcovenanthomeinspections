@@ -23,8 +23,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface">
-      <div className="container-site flex h-20 items-center justify-between">
-        <Logo />
+      <div className="container-site flex h-24 items-center justify-between">
+        <Logo size="lg" />
 
         <nav
           className="hidden h-full items-center gap-8 md:flex"
@@ -46,6 +46,9 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-4">
+          <span className="hidden text-base font-bold text-gold md:inline md:text-lg">
+            Call Now To Schedule!
+          </span>
           <Button
             href={SITE.phoneHref}
             variant="primary"

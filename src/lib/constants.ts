@@ -8,6 +8,10 @@ export const SITE = {
   infoEmail: "txcovenanthomeinspections@gmail.com",
   location: "Greater Houston Area",
   copyright: `© ${new Date().getFullYear()} Texas Covenant Home Inspections. All rights reserved.`,
+  developer: {
+    name: "Trashbox LLC",
+    href: "https://trashbox.io/",
+  },
 } as const;
 
 export const FOOTER_LINKS = [
@@ -19,5 +23,4 @@ export const FOOTER_LINKS = [
 
 export const HERO_IMAGE = "/images/hero.jpg";
 
-export const JOEL_PORTRAIT =
-  "https://lh3.googleusercontent.com/aida/AP1WRLu5WHEiw80d0wQb5yskLunbsTSXubS9ebXdsLXquklTUTOtIVoJinHeTx3yUaIITg3EmlB5WSeFnm6qHaxWeY_CggNkPEBRBjL5FcjgTJYs0Z8mUnaXAtBOvD9mK7Hcz3p_UFRb33mrdwxaacMKdxJBiPe7CYZurF0ZAVtFIWifjUeAbWHONvFeSTfhGf3-hCirKO0LCGEjbkyjfzdmASXLa9Xk5pD-9oS5X_JPO18BM25lXDoECCQw2B6k";
+export const JOEL_PORTRAIT = "/images/joelpiercy.png";

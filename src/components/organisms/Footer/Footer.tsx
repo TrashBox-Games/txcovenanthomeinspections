@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="mt-auto w-full bg-primary text-on-primary">
       <div className="container-site grid grid-cols-1 gap-gutter py-stack-xl md:grid-cols-3">
         <div className="flex flex-col gap-stack-md">
-          <Logo size="sm" variant="footer" />
+          <Logo size="lg" variant="footer" />
           <p className="text-sm text-primary-fixed-dim opacity-80">
             Serving the Texas community with integrity, professionalism, and
             care in every inspection.
@@ -60,9 +60,23 @@ export function Footer() {
       </div>
 
       <div className="border-t border-on-primary/20 py-stack-md">
-        <p className="container-site text-center text-sm text-primary-fixed-dim opacity-60">
-          {SITE.copyright}
-        </p>
+        <div className="container-site flex flex-col items-center justify-center gap-1 text-center text-sm text-primary-fixed-dim opacity-60 sm:flex-row sm:gap-3">
+          <p>{SITE.copyright}</p>
+          <span className="hidden sm:inline" aria-hidden="true">
+            ·
+          </span>
+          <p>
+            Web development by{" "}
+            <a
+              href={SITE.developer.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-tertiary-fixed"
+            >
+              {SITE.developer.name}
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );

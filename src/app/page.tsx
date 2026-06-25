@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { HeroSection } from "@/components/organisms/HeroSection/HeroSection";
-import { MissionSection } from "@/components/organisms/MissionSection/MissionSection";
+import { CTASection } from "@/components/organisms/CTASection/CTASection";
+import { InspectionJourneySection } from "@/components/organisms/InspectionJourneySection/InspectionJourneySection";
 import { ServicesSection } from "@/components/organisms/ServicesSection/ServicesSection";
+import { WhyChooseSection } from "@/components/organisms/WhyChooseSection/WhyChooseSection";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -13,8 +15,10 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <MissionSection />
       <ServicesSection />
+      <WhyChooseSection />
+      <InspectionJourneySection />
+      <CTASection />
     </>
   );
 }

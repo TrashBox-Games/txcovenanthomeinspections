@@ -5,6 +5,8 @@ interface SectionHeaderProps {
   description?: string;
   className?: string;
   align?: "left" | "center";
+  variant?: "default" | "inverted";
+  showAccent?: boolean;
 }
 
 export function SectionHeader({
@@ -12,6 +14,8 @@ export function SectionHeader({
   description,
   className,
   align = "center",
+  variant = "default",
+  showAccent = false,
 }: SectionHeaderProps) {
   return (
     <div
@@ -21,11 +25,32 @@ export function SectionHeader({
         className,
       )}
     >
-      <h2 className="mb-stack-sm font-headline text-2xl font-semibold text-primary md:text-[2rem] md:leading-10">
+      <h2
+        className={cn(
+          "mb-stack-sm font-headline text-2xl font-semibold md:text-[2rem] md:leading-10",
+          variant === "inverted" ? "text-on-primary" : "text-primary",
+        )}
+      >
         {title}
       </h2>
+      {showAccent && (
+        <div
+          className={cn(
+            "mb-stack-sm h-1 w-16 bg-gold",
+            align === "center" && "mx-auto",
+          )}
+          aria-hidden
+        />
+      )}
       {description && (
-        <p className="mx-auto max-w-2xl text-base text-on-surface-variant md:text-lg md:leading-7">
+        <p
+          className={cn(
+            "mx-auto max-w-2xl text-base md:text-lg md:leading-7",
+            variant === "inverted"
+              ? "text-primary-fixed-dim"
+              : "text-on-surface-variant",
+          )}
+        >
           {description}
         </p>
       )}

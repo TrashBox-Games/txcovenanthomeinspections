@@ -15,8 +15,38 @@ describe("MobileNavMenu", () => {
     expect(screen.getByRole("link", { name: /^home$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^about$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^services$/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /^plumbing$/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /^structural$/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /^contact$/i })).toBeInTheDocument();
+  });
+
+  it("hides service subsections until the service is expanded", () => {
+    render(<MobileNavMenu isOpen onClose={vi.fn()} activePath="/" />);
+
+    expect(
+      screen.queryByRole("link", { name: /^roofing$/i }),
+    ).not.toBeInTheDocument();
+
+    fireEvent.click(
+      screen.getByRole("button", { name: /show structural sections/i }),
+    );
+
+    expect(
+      screen.getByRole("link", { name: /^roofing$/i }),
+    ).toHaveAttribute("href", "/services/structural#roofing");
+  });
+
+  it("collapses service subsections when toggled again", () => {
+    render(<MobileNavMenu isOpen onClose={vi.fn()} activePath="/" />);
+
+    const toggle = screen.getByRole("button", {
+      name: /show structural sections/i,
+    });
+    fireEvent.click(toggle);
+    fireEvent.click(screen.getByRole("button", { name: /hide structural sections/i }));
+
+    expect(
+      screen.queryByRole("link", { name: /^roofing$/i }),
+    ).not.toBeInTheDocument();
   });
 
   it("does not render when closed", () => {

@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Gavel, Shield, Verified } from "lucide-react";
+import { Gavel, Shield /* , Verified */ } from "lucide-react";
 import { FadeIn } from "@/components/atoms/FadeIn/FadeIn";
 
 const certifications = [
-  { icon: Verified, label: "InterNACHI Certified" },
+  // { icon: Verified, label: "InterNACHI Certified" },
   { icon: Gavel, label: "TREC Licensed" },
   { icon: Shield, label: "Fully Insured" },
 ];

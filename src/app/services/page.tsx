@@ -4,7 +4,7 @@ import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `Explore home inspection services from ${SITE.name} — plumbing, electrical, and roofing inspections in the ${SITE.location}.`,
+  description: `Explore home inspection services from ${SITE.name} — structural, electrical, HVAC, plumbing, and appliance inspections in the ${SITE.location}.`,
 };
 
 export default function ServicesPage() {
