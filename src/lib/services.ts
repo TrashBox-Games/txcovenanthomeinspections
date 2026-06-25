@@ -95,8 +95,9 @@ export const SERVICES: Service[] = [
     title: "HVAC",
     shortDescription:
       "Assessment of heating, cooling, ductwork, and ventilation performance.",
-    image: "/images/hero.jpg",
-    imageAlt: "Home heating and cooling systems inspected during a home inspection",
+    image: "/images/services/hvac.jpg",
+    imageAlt:
+      "Outdoor HVAC unit with rooftop fans inspected during a home inspection",
     overview:
       "Comfort and air quality depend on properly functioning HVAC systems. I evaluate heating and cooling equipment, ductwork, thermostats, and ventilation to help you understand system condition, performance, and potential repair needs.",
     highlights: [
