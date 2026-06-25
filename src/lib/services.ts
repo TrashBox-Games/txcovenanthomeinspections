@@ -169,8 +169,9 @@ export const SERVICES: Service[] = [
     title: "Appliances",
     shortDescription:
       "Operational checks of built-in and included kitchen and laundry appliances.",
-    image: "/images/services/electrical.png",
-    imageAlt: "Kitchen appliances tested during a home inspection",
+    image: "/images/services/appliances.jpg",
+    imageAlt:
+      "Modern gas cooktop with a lit burner during an appliance inspection",
     overview:
       "Appliances are a major part of daily home function. I test built-in and included appliances for basic operation so you know whether key equipment is working as expected before closing or moving in.",
     highlights: [

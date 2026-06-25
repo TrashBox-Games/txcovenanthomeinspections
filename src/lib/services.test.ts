@@ -11,6 +11,11 @@ describe("services", () => {
     expect(service?.image).toBe("/images/services/plumbing.jpg");
   });
 
+  it("uses the appliances image for the appliances service", () => {
+    const service = getServiceBySlug("appliances");
+    expect(service?.image).toBe("/images/services/appliances.jpg");
+  });
+
   it("returns undefined for an unknown slug", () => {
     expect(getServiceBySlug("roofing")).toBeUndefined();
   });
