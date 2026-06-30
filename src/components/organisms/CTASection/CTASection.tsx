@@ -14,7 +14,7 @@ export function CTASection() {
           Questions before or after the inspection are always welcome.
         </h2>
         <p className="text-lg text-primary-fixed-dim">
-          Just call or text. I look forward to serving you.
+          Just call or text. We look forward to serving you.
         </p>
         <div className="mt-stack-sm flex flex-col gap-stack-md sm:flex-row">
           <Button href={SITE.phoneHref} variant="gold" size="lg">

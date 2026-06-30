@@ -26,7 +26,7 @@ describe("WhyChooseSection", () => {
     expect(container.querySelector("section")).toHaveClass("bg-primary");
   });
 
-  it("renders the why choose cards in order with first-person copy", () => {
+  it("renders the why choose cards in order with team voice copy", () => {
     render(<WhyChooseSection />);
 
     expect(
@@ -46,7 +46,7 @@ describe("WhyChooseSection", () => {
       screen.getByText(/texas real estate commission/i),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(/i deliver comprehensive, easy-to-understand reports/i),
+      screen.getByText(/we deliver comprehensive, easy-to-understand reports/i),
     ).toBeInTheDocument();
 
     const headings = screen
@@ -59,11 +59,11 @@ describe("WhyChooseSection", () => {
     ]);
   });
 
-  it("uses first-person language in the section description", () => {
+  it("uses inclusive we language in the section description", () => {
     render(<WhyChooseSection />);
 
     expect(
-      screen.getByText(/i bring a unique blend of professional expertise/i),
+      screen.getByText(/we bring a unique blend of professional expertise/i),
     ).toBeInTheDocument();
   });
 });

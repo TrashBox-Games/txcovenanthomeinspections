@@ -12,19 +12,19 @@ const reasons = [
     icon: MessageCircle,
     title: "Personable",
     description:
-      "Call or text anytime. I'll be there to answer your questions and help where you need it.",
+      "Call or text anytime. We'll be there to answer your questions and help where you need it.",
   },
   {
     icon: BadgeCheck,
     title: "Licensed Professional",
     description:
-      "Licensed with the Texas Real Estate Commission (TREC) and the National Home Inspection Examination (NHIE).",
+      "Licensed officially with the Texas Real Estate Commission (TREC).",
   },
   {
     icon: FileText,
     title: "Detailed Reports",
     description:
-      "I deliver comprehensive, easy-to-understand reports quickly to help you make informed decisions.",
+      "We deliver comprehensive, easy-to-understand reports quickly to help you make informed decisions.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function WhyChooseSection() {
         <FadeIn>
           <SectionHeader
             title="Why Choose Us"
-            description="I bring a unique blend of professional expertise and unwavering integrity to every home I inspect."
+            description="We bring a unique blend of professional expertise and unwavering integrity to every home we inspect."
             variant="inverted"
             showAccent
           />

@@ -36,4 +36,12 @@ describe("CTASection", () => {
       }),
     ).toHaveClass("text-on-primary");
   });
+
+  it("uses inclusive we language in the supporting copy", () => {
+    render(<CTASection />);
+
+    expect(
+      screen.getByText(/we look forward to serving you/i),
+    ).toBeInTheDocument();
+  });
 });
