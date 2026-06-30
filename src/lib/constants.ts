@@ -16,9 +16,9 @@ export const SITE = {
 
 export const FOOTER_LINKS = [
   { label: "Services", href: "/services" },
-  { label: "Pricing", href: "#" },
-  { label: "Inspection Agreement", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+  { label: "Privacy Policy", href: "/privacy" },
 ] as const;
 
 export const HERO_IMAGE = "/images/hero.webp";
