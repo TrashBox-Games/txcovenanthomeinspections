@@ -18,7 +18,7 @@ const reasons = [
     icon: BadgeCheck,
     title: "Licensed Professional",
     description:
-      "Licensed officially with the Texas Real Estate Commission (TREC).",
+      "We are licensed and certified officially with the Texas Real Estate Commission (TREC).",
   },
   {
     icon: FileText,
