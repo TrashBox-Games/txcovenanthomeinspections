@@ -28,4 +28,20 @@ describe("MarkdownContent", () => {
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
     expect(link).toHaveClass("underline");
   });
+
+  it("renders section headings", () => {
+    render(<MarkdownContent content="## Information We Collect" />);
+
+    expect(
+      screen.getByRole("heading", { name: /information we collect/i, level: 2 }),
+    ).toBeInTheDocument();
+  });
+
+  it("renders unordered lists", () => {
+    render(<MarkdownContent content={"- First item\n- Second item"} />);
+
+    expect(screen.getByRole("list")).toBeInTheDocument();
+    expect(screen.getByText("First item")).toBeInTheDocument();
+    expect(screen.getByText("Second item")).toBeInTheDocument();
+  });
 });

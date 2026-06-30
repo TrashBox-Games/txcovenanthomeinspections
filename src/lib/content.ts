@@ -7,3 +7,10 @@ export function getJoelBio(): string {
     "utf-8",
   ).trim();
 }
+
+export function getPrivacyPolicy(): string {
+  return readFileSync(
+    join(process.cwd(), "src/content/privacy-policy.md"),
+    "utf-8",
+  ).trim();
+}
