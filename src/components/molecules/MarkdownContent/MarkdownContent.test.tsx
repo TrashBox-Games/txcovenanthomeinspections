@@ -16,4 +16,16 @@ describe("MarkdownContent", () => {
     expect(screen.getByText("First paragraph.")).toBeInTheDocument();
     expect(screen.getByText("Second paragraph.")).toBeInTheDocument();
   });
+
+  it("renders external links with security attributes", () => {
+    render(
+      <MarkdownContent content="Visit [New Life Church](https://newlifekingwood.com/)." />,
+    );
+
+    const link = screen.getByRole("link", { name: "New Life Church" });
+    expect(link).toHaveAttribute("href", "https://newlifekingwood.com/");
+    expect(link).toHaveAttribute("target", "_blank");
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+    expect(link).toHaveClass("underline");
+  });
 });

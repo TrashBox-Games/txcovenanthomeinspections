@@ -26,6 +26,16 @@ export function MarkdownContent({
           p: ({ children }) => (
             <p className={paragraphVariants[variant]}>{children}</p>
           ),
+          a: ({ href, children }) => (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline transition-colors hover:text-tertiary"
+            >
+              {children}
+            </a>
+          ),
         }}
       >
         {content}
