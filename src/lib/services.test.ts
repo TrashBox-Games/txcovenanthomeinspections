@@ -45,13 +45,29 @@ describe("services", () => {
     ]);
   });
 
-  it("defines subsections with anchor ids for each service", () => {
+  it("defines gallery cards with webp images for each service", () => {
     const structural = getServiceBySlug("structural");
 
-    expect(structural?.sections).toEqual(
+    expect(structural?.gallery).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ id: "roofing", label: "Roofing" }),
+        expect.objectContaining({
+          label: "Roof Flashing Detail",
+          image: "/images/services/structural_page/roof-flashing-detail.webp",
+        }),
       ]),
     );
+
+    for (const service of SERVICES) {
+      expect(service.gallery.length).toBeGreaterThan(0);
+      for (const item of service.gallery) {
+        expect(item.image).toMatch(/\.webp$/);
+      }
+    }
+  });
+
+  it("defines detail paragraphs for each service", () => {
+    for (const service of SERVICES) {
+      expect(service.detailParagraphs.length).toBeGreaterThanOrEqual(3);
+    }
   });
 });

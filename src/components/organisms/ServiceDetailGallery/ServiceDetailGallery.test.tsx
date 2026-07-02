@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
-import { ServiceDetailContent } from "./ServiceDetailContent";
+import { ServiceDetailGallery } from "./ServiceDetailGallery";
 import { getServiceBySlug } from "@/lib/services";
 
 beforeAll(() => {
@@ -20,24 +20,15 @@ beforeAll(() => {
   vi.stubGlobal("IntersectionObserver", MockIntersectionObserver);
 });
 
-describe("ServiceDetailContent", () => {
-  it("renders service detail prose and the schedule CTA", () => {
+describe("ServiceDetailGallery", () => {
+  it("renders gallery cards for each service image", () => {
     const service = getServiceBySlug("structural");
     expect(service).toBeDefined();
 
-    render(<ServiceDetailContent service={service!} />);
+    render(<ServiceDetailGallery gallery={service!.gallery} />);
 
-    expect(
-      screen.getByRole("heading", {
-        name: /structural inspection service details/i,
-      }),
-    ).toBeInTheDocument();
-    expect(screen.getByText(service!.detailParagraphs[0])).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: /schedule this inspection/i }),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /schedule your inspection/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Roof Flashing Detail")).toBeInTheDocument();
+    expect(screen.getByText("Window Seal Issue")).toBeInTheDocument();
+    expect(screen.getAllByRole("img")).toHaveLength(service!.gallery.length);
   });
 });

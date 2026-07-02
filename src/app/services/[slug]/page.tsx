@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceDetailContent } from "@/components/organisms/ServiceDetailContent/ServiceDetailContent";
+import { ServiceDetailGallery } from "@/components/organisms/ServiceDetailGallery/ServiceDetailGallery";
 import { ServiceDetailHero } from "@/components/organisms/ServiceDetailHero/ServiceDetailHero";
 import { SITE } from "@/lib/constants";
 import {
@@ -44,6 +45,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
     <>
       <ServiceDetailHero service={service} />
       <ServiceDetailContent service={service} />
+      <ServiceDetailGallery gallery={service.gallery} />
     </>
   );
 }

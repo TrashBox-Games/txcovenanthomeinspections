@@ -1,7 +1,7 @@
-export interface ServiceSection {
-  id: string;
+export interface ServiceGalleryItem {
   label: string;
-  description: string;
+  image: string;
+  imageAlt: string;
 }
 
 export interface Service {
@@ -11,8 +11,8 @@ export interface Service {
   image: string;
   imageAlt: string;
   overview: string;
-  highlights: string[];
-  sections: ServiceSection[];
+  detailParagraphs: string[];
+  gallery: ServiceGalleryItem[];
 }
 
 export const SERVICES: Service[] = [
@@ -20,36 +20,47 @@ export const SERVICES: Service[] = [
     slug: "structural",
     title: "Structural",
     shortDescription:
-      "Evaluation of the foundation, framing, roof structure, and load-bearing components.",
+      "Comprehensive evaluation of the foundation, framing, and load-bearing systems.",
     image: "/images/services/roofing.webp",
     imageAlt: "Roof and structural components inspected during a home inspection",
     overview:
       "A home's structure is what everything else depends on. I inspect the foundation, framing, roof structure, and other load-bearing components to identify signs of movement, damage, or deterioration that could affect safety and long-term value.",
-    highlights: [
-      "Foundation walls, slabs, and crawlspaces",
-      "Framing, beams, and load-bearing walls",
-      "Roof structure and attic framing",
-      "Signs of settlement, sagging, or structural stress",
-      "Visible moisture intrusion or wood-destroying organism damage",
+    detailParagraphs: [
+      "A home's structure is what everything else depends on. I inspect the foundation, framing, roof structure, and other load-bearing components to identify signs of movement, damage, or deterioration that could affect safety and long-term value.",
+      "Foundation walls, slabs, and crawlspaces are carefully examined for signs of settlement, cracking, or moisture intrusion. Roof structure, flashing, and attic framing are evaluated to identify conditions that could lead to water damage or structural stress.",
+      "Exterior masonry, siding transitions, and window openings are reviewed for separation, seal failure, and other defects that can compromise the building envelope. These details often reveal movement or drainage issues that are not obvious from a casual walkthrough.",
+      "Signs of settlement, sagging, or structural stress are documented along with visible wood-destroying organism damage. The goal is to give you a clear picture of structural condition before you buy, sell, or plan repairs.",
     ],
-    sections: [
+    gallery: [
       {
-        id: "roofing",
-        label: "Roofing",
-        description:
-          "Filler overview of roofing materials, flashing, and visible roof structure concerns.",
+        label: "Roof Flashing Detail",
+        image: "/images/services/structural_page/roof-flashing-detail.webp",
+        imageAlt: "Roof flashing detail where siding meets shingles",
       },
       {
-        id: "foundation",
-        label: "Foundation",
-        description:
-          "Filler overview of slabs, piers, crawlspaces, and signs of settlement or cracking.",
+        label: "Attic Vent",
+        image: "/images/services/structural_page/attic-vent.webp",
+        imageAlt: "Attic vent flashing on a shingle roof",
       },
       {
-        id: "framing",
-        label: "Framing",
-        description:
-          "Filler overview of load-bearing walls, beams, and attic framing conditions.",
+        label: "Brick Cracks",
+        image: "/images/services/structural_page/brick-cracks.webp",
+        imageAlt: "Cracked brick masonry on an exterior wall",
+      },
+      {
+        label: "Brick & Window Frame",
+        image: "/images/services/structural_page/brick-and-window-frame.webp",
+        imageAlt: "Brick separation near a window frame and roofline",
+      },
+      {
+        label: "Attic Framing System",
+        image: "/images/services/structural_page/attic-framing-system.webp",
+        imageAlt: "Wooden attic framing and roof sheathing",
+      },
+      {
+        label: "Window Seal Issue",
+        image: "/images/services/structural_page/window-seal-issue.webp",
+        imageAlt: "Fogged double-pane window indicating seal failure",
       },
     ],
   },
@@ -62,31 +73,27 @@ export const SERVICES: Service[] = [
     imageAlt: "Electrical panel inspected during a home inspection",
     overview:
       "Electrical problems pose serious safety risks. I inspect the main service panel, branch circuits, and visible wiring to identify hazards, outdated components, and code concerns that could affect your family's safety.",
-    highlights: [
-      "Main panel and sub-panels",
-      "Branch circuit wiring and labeling",
-      "Outlets, switches, and GFCI protection",
-      "Grounding and bonding systems",
-      "Signs of overheating, double-tapping, or improper work",
+    detailParagraphs: [
+      "Electrical problems pose serious safety risks. I inspect the main service panel, branch circuits, and visible wiring to identify hazards, outdated components, and code concerns that could affect your family's safety.",
+      "Main panels and sub-panels are evaluated for proper labeling, grounding, bonding, and signs of overheating or improper modifications. Service equipment and utility connections are reviewed when accessible.",
+      "Branch circuit wiring, outlet placement, and GFCI protection are checked throughout the home. Visible conductor conditions, double-tapping, and other workmanship concerns are documented for your review.",
+      "Safety devices, grounding systems, and generator or backup power equipment are assessed to help you understand whether the electrical system is serviceable and safe for everyday use.",
     ],
-    sections: [
+    gallery: [
       {
-        id: "panels",
-        label: "Electrical Panels",
-        description:
-          "Filler overview of main panels, sub-panels, and visible breaker conditions.",
+        label: "Generator & Utility Panel",
+        image: "/images/services/electrical_page/generator-utility-panel.webp",
+        imageAlt: "Generator and electrical meter mounted on an exterior wall",
       },
       {
-        id: "wiring",
-        label: "Wiring",
-        description:
-          "Filler overview of branch circuits, labeling, and visible conductor conditions.",
+        label: "Panel Interior Wiring",
+        image: "/images/services/electrical_page/panel-interior-wiring.webp",
+        imageAlt: "Branch circuit wiring inside an electrical panel",
       },
       {
-        id: "safety",
-        label: "Safety Devices",
-        description:
-          "Filler overview of GFCI protection, grounding, and bonding components.",
+        label: "Main Breaker Connections",
+        image: "/images/services/electrical_page/main-breaker-connections.webp",
+        imageAlt: "Main breaker and service conductor connections",
       },
     ],
   },
@@ -100,31 +107,27 @@ export const SERVICES: Service[] = [
       "Outdoor HVAC unit with rooftop fans inspected during a home inspection",
     overview:
       "Comfort and air quality depend on properly functioning HVAC systems. I evaluate heating and cooling equipment, ductwork, thermostats, and ventilation to help you understand system condition, performance, and potential repair needs.",
-    highlights: [
-      "Heating and cooling equipment operation",
-      "Air handlers, furnaces, and condensers",
-      "Ductwork, registers, and visible connections",
-      "Thermostat controls and temperature differential",
-      "Signs of poor airflow, leaks, or deferred maintenance",
+    detailParagraphs: [
+      "Comfort and air quality depend on properly functioning HVAC systems. I evaluate heating and cooling equipment, ductwork, thermostats, and ventilation to help you understand system condition, performance, and potential repair needs.",
+      "Heating and cooling equipment is checked for basic operation, visible installation issues, and signs of deferred maintenance. Air handlers, furnaces, and condensers are reviewed when accessible.",
+      "Ductwork, supply registers, return paths, and attic ventilation are examined for leaks, restrictions, and proper termination. Ridge vents and other roof-level ventilation components are evaluated as part of the whole system.",
+      "Thermostat controls, temperature differential, and indoor air quality accessories such as filtration or purification equipment are noted so you know how the system is performing and what may need attention.",
     ],
-    sections: [
+    gallery: [
       {
-        id: "heating",
-        label: "Heating",
-        description:
-          "Filler overview of furnaces, heat pumps, and heating performance checks.",
+        label: "Ridge Vent",
+        image: "/images/services/hvac_page/ridge-vent.webp",
+        imageAlt: "Ridge vent installed along a shingle roof peak",
       },
       {
-        id: "cooling",
-        label: "Cooling",
-        description:
-          "Filler overview of condensers, air handlers, and cooling operation.",
+        label: "Air Supply Vent",
+        image: "/images/services/hvac_page/air-supply-vent.webp",
+        imageAlt: "Interior HVAC supply register on a textured wall",
       },
       {
-        id: "ductwork",
-        label: "Ductwork",
-        description:
-          "Filler overview of supply lines, returns, and visible ventilation paths.",
+        label: "Air Purification System",
+        image: "/images/services/hvac_page/air-purification-system.webp",
+        imageAlt: "Whole-home air purification unit installed on ductwork",
       },
     ],
   },
@@ -137,31 +140,32 @@ export const SERVICES: Service[] = [
     imageAlt: "Plumbing pipes and fixtures during a home inspection",
     overview:
       "Water damage and plumbing failures are among the most costly issues a homeowner can face. My plumbing inspection covers the full water supply and waste systems so you know exactly what condition they are in before you buy or maintain your home.",
-    highlights: [
-      "Visible supply and drain lines",
-      "Fixtures, faucets, and shut-off valves",
-      "Water heater age, condition, and venting",
-      "Signs of leaks, corrosion, or improper connections",
-      "Water pressure and drainage performance",
+    detailParagraphs: [
+      "Water damage and plumbing failures are among the most costly issues a homeowner can face. My plumbing inspection covers the full water supply and waste systems so you know exactly what condition they are in before you buy or maintain your home.",
+      "Visible supply and drain lines, shut-off valves, and fixture connections are reviewed for leaks, corrosion, and improper materials. Bathrooms, kitchens, and utility areas receive focused attention.",
+      "Water heaters are evaluated for age, condition, relief valve installation, and venting. Temperature and pressure relief discharge piping is checked for safe routing and proper support.",
+      "Fixtures, faucets, tubs, showers, and drainage performance are tested to identify slow drains, failed seals, and other issues that can lead to moisture damage behind walls or under cabinets.",
     ],
-    sections: [
+    gallery: [
       {
-        id: "supply-lines",
-        label: "Supply Lines",
-        description:
-          "Filler overview of visible water supply piping and shut-off valves.",
+        label: "Bathroom Fixtures",
+        image: "/images/services/plumbing_page/bathroom-fixtures.webp",
+        imageAlt: "Bathroom tub, shower, and toilet fixtures",
       },
       {
-        id: "fixtures",
-        label: "Fixtures & Drains",
-        description:
-          "Filler overview of sinks, tubs, showers, and drainage performance.",
+        label: "Water Heater Valve",
+        image: "/images/services/plumbing_page/water-heater-valve.webp",
+        imageAlt: "Temperature and pressure relief valve on a water heater",
       },
       {
-        id: "water-heater",
-        label: "Water Heaters",
-        description:
-          "Filler overview of tank and tankless water heater condition and venting.",
+        label: "Sink Seal Condition",
+        image: "/images/services/plumbing_page/sink-seal-condition.webp",
+        imageAlt: "Staining at the seam between a sink and countertop",
+      },
+      {
+        label: "Tub Spout Seal",
+        image: "/images/services/plumbing_page/tub-spout-seal.webp",
+        imageAlt: "Mineral buildup around a tub spout escutcheon",
       },
     ],
   },
@@ -175,31 +179,32 @@ export const SERVICES: Service[] = [
       "Modern gas cooktop with a lit burner during an appliance inspection",
     overview:
       "Appliances are a major part of daily home function. I test built-in and included appliances for basic operation so you know whether key equipment is working as expected before closing or moving in.",
-    highlights: [
-      "Ranges, ovens, and cooktops",
-      "Dishwashers and garbage disposals",
-      "Refrigerators and built-in microwaves",
-      "Washers and dryers when included with the sale",
-      "Visible installation issues and safety concerns",
+    detailParagraphs: [
+      "Appliances are a major part of daily home function. I test built-in and included appliances for basic operation so you know whether key equipment is working as expected before closing or moving in.",
+      "Kitchen appliances including ranges, ovens, cooktops, dishwashers, and garbage disposals are checked for basic function and visible installation concerns. Gas appliances are evaluated for proper ignition and safe operation.",
+      "Laundry appliances and dryer vent connections are reviewed when included with the sale. Exhaust routing, vent materials, and termination are important safety items that are documented during the inspection.",
+      "Refrigerators, built-in microwaves, and other included equipment are noted for operation and visible defects so you can plan for repairs or replacements before move-in.",
     ],
-    sections: [
+    gallery: [
       {
-        id: "kitchen",
-        label: "Kitchen Appliances",
-        description:
-          "Filler overview of ranges, ovens, dishwashers, and related built-ins.",
+        label: "Exhaust Vent Penetration",
+        image: "/images/services/appliances_page/exhaust-vent-penetration.webp",
+        imageAlt: "Exhaust vent pipe penetration sealed in an attic space",
       },
       {
-        id: "laundry",
-        label: "Laundry Appliances",
-        description:
-          "Filler overview of washers, dryers, and visible hookup conditions.",
+        label: "Garbage Disposal",
+        image: "/images/services/appliances_page/garbage-disposal.webp",
+        imageAlt: "Garbage disposal unit installed under a kitchen sink",
       },
       {
-        id: "operation",
-        label: "Operation Testing",
-        description:
-          "Filler overview of basic function checks performed during the inspection.",
+        label: "Dryer Vent Connection",
+        image: "/images/services/appliances_page/dryer-vent-connection.webp",
+        imageAlt: "Flexible dryer vent duct behind a laundry appliance",
+      },
+      {
+        label: "Gas Range Operation",
+        image: "/images/services/appliances_page/gas-range-operation.webp",
+        imageAlt: "Gas range burners operating on a kitchen cooktop",
       },
     ],
   },

@@ -27,6 +27,7 @@
   --color-surface-container-high: #e8e8eb;
   --color-surface-tint: #3f6187;
   --color-primary-fixed: #d1e4ff;
+  --color-secondary-container: #ffc96f;
 
   --color-error: #ba1a1a;
 
@@ -87,6 +88,13 @@
 
 @utility shadow-ambient {
   box-shadow: var(--shadow-ambient);
+}
+
+@utility glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 @utility container-site {

@@ -21,10 +21,6 @@ export const NAV_ITEMS: NavItem[] = [
     children: SERVICES.map((service) => ({
       label: service.title,
       href: `/services/${service.slug}`,
-      children: service.sections.map((section) => ({
-        label: section.label,
-        href: `/services/${service.slug}#${section.id}`,
-      })),
     })),
   },
   { label: "Contact", href: "/contact" },
