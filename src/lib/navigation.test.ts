@@ -21,4 +21,11 @@ describe("navigation", () => {
       expect(service.children).toBeUndefined();
     }
   });
+
+  it("includes a link to the preferred vendors page", () => {
+    const vendorsItem = NAV_ITEMS.find((item) => item.label === "Vendors");
+
+    expect(vendorsItem?.href).toBe("/preferred-vendors");
+    expect(vendorsItem?.children).toBeUndefined();
+  });
 });

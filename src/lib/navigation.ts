@@ -23,6 +23,7 @@ export const NAV_ITEMS: NavItem[] = [
       href: `/services/${service.slug}`,
     })),
   },
+  { label: "Vendors", href: "/preferred-vendors" },
   { label: "Contact", href: "/contact" },
 ];
 
