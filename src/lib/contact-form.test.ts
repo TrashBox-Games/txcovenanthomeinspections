@@ -1,4 +1,5 @@
 import {
+  buildSubmitRequest,
   submitContactForm,
   type ContactFormPayload,
   type ContactFormResult,
@@ -12,6 +13,36 @@ const payload: ContactFormPayload = {
   _honeypot: "",
 };
 
+describe("buildSubmitRequest", () => {
+  it("maps phone into metadata for the Trashbox API", () => {
+    expect(buildSubmitRequest(payload)).toEqual({
+      name: "Jane Doe",
+      email: "jane@example.com",
+      message: "I need an inspection.",
+      metadata: {
+        phone: "555-0100",
+      },
+      _honeypot: "",
+    });
+  });
+
+  it("omits metadata when phone is not provided", () => {
+    expect(
+      buildSubmitRequest({
+        name: "Jane Doe",
+        email: "jane@example.com",
+        message: "I need an inspection.",
+        _honeypot: "",
+      }),
+    ).toEqual({
+      name: "Jane Doe",
+      email: "jane@example.com",
+      message: "I need an inspection.",
+      _honeypot: "",
+    });
+  });
+});
+
 describe("submitContactForm", () => {
   const apiUrl = "https://api.trashbox.io/submit";
   const apiKey = "test-api-key";
@@ -24,7 +55,7 @@ describe("submitContactForm", () => {
     vi.unstubAllGlobals();
   });
 
-  it("posts the form payload to the Trashbox API with the API key", async () => {
+  it("posts the API request body with phone in metadata", async () => {
     const mockFetch = vi.mocked(fetch);
     mockFetch.mockResolvedValue({
       json: async () => ({ success: true } satisfies ContactFormResult),
@@ -38,7 +69,15 @@ describe("submitContactForm", () => {
         "Content-Type": "application/json",
         "X-Api-Key": apiKey,
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        name: "Jane Doe",
+        email: "jane@example.com",
+        message: "I need an inspection.",
+        metadata: {
+          phone: "555-0100",
+        },
+        _honeypot: "",
+      }),
     });
   });
 

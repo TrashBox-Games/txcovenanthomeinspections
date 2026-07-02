@@ -47,8 +47,10 @@ describe("ContactForm", () => {
         body: JSON.stringify({
           name: "Jane Doe",
           email: "jane@example.com",
-          phone: "555-0100",
           message: "I need an inspection.",
+          metadata: {
+            phone: "555-0100",
+          },
           _honeypot: "",
         }),
       });

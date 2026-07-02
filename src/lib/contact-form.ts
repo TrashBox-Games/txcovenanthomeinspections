@@ -3,7 +3,15 @@ export interface ContactFormPayload {
   email: string;
   message: string;
   phone?: string;
-  _honeypot: string;
+  _honeypot?: string;
+}
+
+export interface SubmitRequest {
+  name: string;
+  email: string;
+  message: string;
+  _honeypot?: string;
+  metadata?: Record<string, string>;
 }
 
 export interface ContactFormResult {
@@ -18,6 +26,27 @@ interface SubmitContactFormOptions {
   apiKey: string;
 }
 
+export function buildSubmitRequest(
+  payload: ContactFormPayload,
+): SubmitRequest {
+  const phone = payload.phone?.trim();
+  const request: SubmitRequest = {
+    name: payload.name,
+    email: payload.email,
+    message: payload.message,
+  };
+
+  if (phone) {
+    request.metadata = { phone };
+  }
+
+  if (payload._honeypot !== undefined) {
+    request._honeypot = payload._honeypot;
+  }
+
+  return request;
+}
+
 export async function submitContactForm(
   payload: ContactFormPayload,
   { apiUrl, apiKey }: SubmitContactFormOptions,
@@ -29,7 +58,7 @@ export async function submitContactForm(
         "Content-Type": "application/json",
         "X-Api-Key": apiKey,
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(buildSubmitRequest(payload)),
     });
 
     const data = (await res.json()) as ContactFormResult;
