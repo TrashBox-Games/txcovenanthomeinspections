@@ -36,11 +36,11 @@ export function ServiceDetailContent({ service }: ServiceDetailContentProps) {
           <FadeIn className="mt-8 lg:col-span-4 lg:mt-0" delay={0.1}>
             <div className="glass-card sticky top-28 space-y-6 rounded-xl p-6">
               <h3 className="font-headline text-xl font-semibold text-primary md:text-2xl">
-                Schedule This Inspection
+                Schedule An Inspection
               </h3>
               <p className="text-sm leading-6 text-on-surface-variant md:text-base">
-                Ready to move forward? Contact {SITE.shortName} to schedule a{" "}
-                {service.title.toLowerCase()} inspection in the {SITE.location}.
+                Ready to move forward? Contact us to schedule an inspection or
+                ask any questions about our services.
               </p>
               <div className="space-y-4 pt-2">
                 <Button href="/contact" variant="gold" size="lg" className="w-full">

@@ -34,7 +34,12 @@ describe("ServiceDetailContent", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(service!.detailParagraphs[0])).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: /schedule this inspection/i }),
+      screen.getByRole("heading", { name: /schedule an inspection/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /ready to move forward\? contact us to schedule an inspection or ask any questions about our services/i,
+      ),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /schedule your inspection/i }),
