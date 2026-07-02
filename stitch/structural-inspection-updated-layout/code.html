@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Structural Inspection - Texas Covenant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e7eeff",
+                    "on-error": "#ffffff",
+                    "primary": "#001f3b",
+                    "tertiary-fixed-dim": "#c5c7c8",
+                    "surface-variant": "#d8e3fa",
+                    "primary-fixed-dim": "#a7c9f5",
+                    "on-secondary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-container": "#313435",
+                    "surface-container-high": "#dee8ff",
+                    "on-tertiary-fixed-variant": "#454748",
+                    "tertiary-fixed": "#e1e3e4",
+                    "secondary-fixed": "#ffdeac",
+                    "on-surface-variant": "#43474e",
+                    "surface-tint": "#3f6187",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#f0f3ff",
+                    "primary-fixed": "#d1e4ff",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#1c1f20",
+                    "secondary-fixed-dim": "#f3be64",
+                    "error": "#ba1a1a",
+                    "on-background": "#111c2c",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#25496e",
+                    "on-tertiary-fixed": "#191c1d",
+                    "secondary": "#7e5700",
+                    "on-primary-fixed": "#001d36",
+                    "surface-container-highest": "#d8e3fa",
+                    "secondary-container": "#ffc96f",
+                    "primary-container": "#0c3559",
+                    "surface": "#f9f9ff",
+                    "outline": "#73777f",
+                    "on-primary-container": "#7d9ec8",
+                    "inverse-surface": "#263142",
+                    "on-secondary-fixed-variant": "#604100",
+                    "on-secondary-fixed": "#281900",
+                    "background": "#f9f9ff",
+                    "outline-variant": "#c3c6cf",
+                    "on-secondary-container": "#785300",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#9a9c9d",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface-dim": "#cfdaf1",
+                    "on-surface": "#111c2c",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a7c9f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "margin-desktop": "40px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "gutter": "24px",
+                    "max-width": "1280px",
+                    "margin-mobile": "16px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "body-lg": ["inter"],
+                    "headline-md": ["manrope"],
+                    "headline-lg-mobile": ["manrope"],
+                    "headline-lg": ["manrope"],
+                    "label-md": ["inter"],
+                    "body-md": ["inter"],
+                    "label-sm": ["inter"],
+                    "headline-xl": ["manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E2E8F0;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-primary border-b border-outline-variant dark:border-on-secondary-fixed-variant sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-20">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2" href="#">
+<img alt="Texas Covenant Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSBDAwnZVo72XrL_jUL_VdH3hVxppG7GUY-_ebJculkK_62umRhm0iXPwcSgFRC_BG_RjQwCXp4vrlzknmSNDW53Hds1nMVRVce2WBt8IY-Iettf9lQJy9HzShtcoQzPPWoYSb9jk_Kvei1RXAbdGELZ8JPgBtrsaqP6H6yllaOKmZIufYquE80p5VrdwOUjkC_zmYN91kkNbtfxfaPcC0GxfwyhZUT0PEnaTIB5goy9wbPiDzR2fa97jXoDyoaDC_iE8">
+</a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-fixed-variant font-medium hover:text-tertiary transition-colors duration-200" href="#">Home</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-fixed-variant font-medium hover:text-tertiary transition-colors duration-200" href="#">About</a>
+<a class="font-label-lg text-label-lg text-primary dark:text-primary-fixed border-b-2 border-secondary-fixed-dim pb-1 hover:text-tertiary transition-colors duration-200 opacity-80 transition-opacity" href="#">Services</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant dark:text-on-primary-fixed-variant font-medium hover:text-tertiary transition-colors duration-200" href="#">Contact</a>
+</nav>
+<!-- Trailing Action -->
+<div class="hidden md:flex items-center gap-4">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Call Now To Schedule!</span>
+<a class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-4 py-2 rounded flex items-center gap-2 transition-colors duration-200" href="tel:5125550199">
+<span class="material-symbols-outlined" style="font-size: 18px;">call</span>
+                    (512) 555-0199
+                </a>
+</div>
+<!-- Mobile Menu Toggle (Placeholder) -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative h-[60vh] min-h-[400px] flex items-center justify-start overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center object-cover mix-blend-overlay opacity-80" data-alt="A professional home inspector wearing a hard hat and safety vest, carefully examining a residential roof structure under bright, clear daylight. The image has a clean, high-resolution aesthetic suitable for a corporate service page, emphasizing safety, thoroughness, and structural integrity. A subtle dark blue gradient overlay adds a premium corporate feel." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDsPtBq-ANXhaJDj51pa4UTWNYfvoX1igvVnsvG0exKKkWpP6cyZuHvOx9na628XMLKZ114yIl1eHekGkanJgNNVngMSPnTnQcWABvIElCC7bxD-_pf1G1NBOumNp7FyOJ2HgnJv-U-emb49lX_lEFQXOV_UzsU5BJDHYzlnluquUL8r5ZuStddTqdUqCnvBkqJobql9T6w9106vZ1HowE-5TlJuiWN6UsKuLi3YmIrBrUJUzuxZi0Wzg&quot;);"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary to-transparent opacity-90"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="max-w-2xl text-on-primary">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary-container mb-4">Our Services</p>
+<h1 class="font-headline-xl text-headline-xl mb-6">Structural Inspection</h1>
+<p class="font-body-lg text-body-lg text-surface-container-high">Comprehensive evaluation of the foundation, framing, and load-bearing systems.</p>
+</div>
+</div>
+</section>
+<!-- Main Content Layout -->
+<section class="py-xl md:py-[80px] bg-surface">
+<div class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Details & Gallery -->
+<div class="lg:col-span-8 space-y-xl">
+<div class="prose max-w-none text-on-surface-variant space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Structural Inspection Service Details</h2>
+<p class="font-body-md text-body-md">A home's structure is what everything else depends on. I inspect the foundation, framing, roof structure, and other load-bearing components to identify signs of movement, damage, or deterioration that could affect safety and long-term value.</p>
+<p class="font-body-md text-body-md">Foundation walls, slabs, and crawlspaces are carefully examined. I inspect the foundation, framing, roof structure, and other load-bearing components to identify signs of movement, settlement, or deterioration. Signs of foundation settlement, roof structure issues, and load-bearing component failures are critical to identify early.</p>
+<p class="font-body-md text-body-md">Framing, and load structure components are inspected thoroughly. Inspections of the foundation, framing, roof structure, and other load-bearing components aim to identify signs of movement, damage, or deterioration that could compromise safety and long-term value.</p>
+<p class="font-body-md text-body-md">Signs of settlement, and attic framing structure are key areas of focus. We inspect the foundation, looking for signs of settlement, sagging, or structural stress, as well as visible moisture intrusion or wood-destroying organism damage.</p>
+</div>
+<!-- Bento Grid Gallery -->
+</div>
+<!-- Right Column: Sticky CTA Sidebar -->
+<div class="lg:col-span-4 mt-8 lg:mt-0">
+<div class="sticky top-28 glass-card p-6 rounded-xl space-y-6">
+<h3 class="font-headline-md text-headline-md text-primary">Schedule This Inspection</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ready to move forward? Contact Texas Covenant to schedule a structural inspection in the Greater Houston Area.</p>
+<div class="space-y-4 pt-4">
+<button class="w-full bg-[#B88935] hover:bg-secondary text-on-primary font-label-md text-label-md py-3 px-6 rounded transition-colors duration-200 flex justify-center items-center">
+                                    Schedule Your Inspection
+                                </button>
+<a class="w-full bg-transparent border border-outline hover:border-primary text-primary font-label-md text-label-md py-3 px-6 rounded transition-colors duration-200 flex justify-center items-center gap-2" href="tel:8324705230">
+<span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+                                    Call (832) 470-5230
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-xl bg-surface border-t border-outline-variant/20">
+<div class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Roof Flashing Detail" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ftLh0Ep8WsDdCOvc9MHnUj9JaayQneju5f5szwAej6DwqhJMzA74aXHO5QVv31z8Ur-ykfopc287uxnSbO3bnN41S8VyyLwp6wUo8uDa2ajwBwXYjNboti4F2zvoLzYuIFLQncfjnG34gXAZmnhwu8n9fmzkeZQGW16qs7EQ8Uia62RQj29NEhkkUHYK08b1Zp8H3EkATiEYuFBeAo4pBFAy47prUAuVB1OEZZZm2XtrEW4FC84q-LnEJxT0rUDk-2s">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Roof Flashing Detail</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Attic Vent" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7r7Tl-Y9YOZyOVGKq9q8STad46O4uhw1lxJaCmyGHFxKWKxlHg9wTelObqhPQ0iDEzY5gMrI691Qcw3dsro_I8k1EJ62v8TCshs0MPsCK9hd-NSmi_2uKknB0cf6ms4tg8FBeLsFIiePyw3O6ztBXsVSjebTsGh24MXjIgEq37a3yxxX7AUlmpAaAC0xmpnHaHBz8ZUfQhPwyY5x0hGeEdag_UgJFuMR4QqbXzkagFjNyJ-oxAPUpYRDNBw50Stuos1Q">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Attic Vent</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Brick Cracks" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMRkvsqgrvCPWqxffYbPLnGzcwzY3YuxNGsycf9_-QNI92n9khlcDWasr3jJkDqXd9K0LM2H1NLkHZuQp3u1oaOV7nb890g6cAMe8TzkSQRFi56E0m8TUZR6K-i13BGXD_jEMBNUL7ND-usor7AWcHljrZymLyTWE3Ij4qKRzz3yFgiGVBHtqtLaQWjDlZy9r7BAcCz8GiP4Zh2qUQLtvNkYLOkbfVTSlvMum0Y715yNQWke-8hnKfVoCJu3L6VFhUYSQ">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Brick Cracks</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Brick &amp; Window Frame" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMKdf_qxNlxeEqM7mDBYgtBl1RjVEXYvfBRZo-FRjoIRtY5UN8BjoZOSbFh-fkRU00iKbeLC7VKUNheLcgOad-ttjHYMPbMg-PKMi6uXI_d3fR1diA34RH3YKzebu-m1yD7Jshbjz_q18ESrXM9Ie_-wgc6tJYN8bOtr69Fqd2X3iBvj_6itx2kuXc42MLGYsVUABfhO0Kp74MSRSxgkdVammSYs2jU69Ow4J_SZM7DCYQJLHvX7S50xg9Op2YJaDRRR0">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Brick &amp; Window Frame</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Attic Framing System" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpc5RJjSnOlxCIea9fxKwjx-C3b8xBTn3H9I6_o5HEYUreJOHZAD2GKmMxIqu6GSyMhL-usJFywJgqU-vtyqoKhkaIbuvus0XtpBqT_K79JuGZSyThnYYOOW1Q8MrpYrSjql9iaOylEtBQbsq8FXDFzSHArlDsaXLGjPOFfmlnhPdmdubZGko-_iJ-VBwcF0EGUm9PwaCFN8D4VcsdreoTKpGLvgYmGbV39Wr6XlZdfWbpWy3CCqFNDmfsvRb-ge5aLFE">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Attic Framing System</p>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden flex flex-col">
+<div class="h-64 overflow-hidden">
+<img alt="Window Seal Issue" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0RD84FfCc4cDw26aV_-FraLHv-_udMfLi8Ql2Q9GyC8t3d0Em9AURZUq4LyhW5r9uinrxeT_n685Bi9frfHC2h3eQX-8gnN5VvapKaQ7-4HQ8tL_8Feek1eSTGIK82OT5lPfHvfcCvB8vKI5HgKJKvYg-62SGVGvzpzBNUoosBN0-VBdurxK1W06flPQm2kisM-QtNlCPmPlKKDH8qzfxKlXcbHqhTosp4-Mx63XIrkkr0CvO6VMaIIYwhANUZlX7jM">
+</div>
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant text-center">
+<p class="font-label-lg text-label-lg text-primary font-bold">Window Seal Issue</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-on-primary text-on-primary w-full border-t border-outline-variant/20 mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop py-xl max-w-max-width mx-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<a class="flex items-center gap-2" href="#">
+<img alt="Texas Covenant Logo" class="h-16 w-auto object-contain bg-surface-container-lowest p-2 rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPbb5peiOcFbIst3UnNY8R1xy6jDIQr4y6XfpYNXF6HugqnxuUHzl08XFOs1s-x75m7NtK5ssu34FH-VAT1pCzzblTqQeIShlBXwcTzZlD820IKbBT-0V-n1iPA5F2wOzrYJ4U0XA1awlFHHMvQjHz657LbuyL960evCwPwU8klZm-xB_O2d4grJZJO6yRzaOJZ2_Upw1qm0oZPB5mB4bBFxwRERjr2W_WPHU0wfs2vdeBEOc9lEh7Coqw3TWEsMsWS0U">
+</a>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim opacity-80 max-w-xs mt-2">
+                    Serving the Texas community with integrity, professionalism, and care in every inspection.
+                </p>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-label-lg font-bold text-tertiary-fixed-dim mb-2">Quick Links</h4>
+<a class="font-body-sm text-body-sm text-primary-fixed-dim opacity-80 hover:text-tertiary-fixed transition-colors duration-200" href="#">Services</a>
+<a class="font-body-sm text-body-sm text-primary-fixed-dim opacity-80 hover:text-tertiary-fixed transition-colors duration-200" href="#">About</a>
+<a class="font-body-sm text-body-sm text-primary-fixed-dim opacity-80 hover:text-tertiary-fixed transition-colors duration-200" href="#">Contact</a>
+<a class="font-body-sm text-body-sm text-primary-fixed-dim opacity-80 hover:text-tertiary-fixed transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+<!-- Contact Info -->
+<div class="flex flex-col gap-3">
+<h4 class="font-label-lg text-label-lg font-bold text-tertiary-fixed-dim mb-2">Contact Info</h4>
+<div class="flex items-center gap-2 text-primary-fixed-dim opacity-80">
+<span class="material-symbols-outlined" style="font-size: 16px;">call</span>
+<span class="font-body-sm text-body-sm">(832) 470-5230</span>
+</div>
+<div class="flex items-center gap-2 text-primary-fixed-dim opacity-80">
+<span class="material-symbols-outlined" style="font-size: 16px;">location_on</span>
+<span class="font-body-sm text-body-sm">Greater Houston Area</span>
+</div>
+<div class="flex items-center gap-2 text-primary-fixed-dim opacity-80">
+<span class="material-symbols-outlined" style="font-size: 16px;">mail</span>
+<span class="font-body-sm text-body-sm">txcovenanthomeinspections@gmail.com</span>
+</div>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="border-t border-primary-container bg-[#08223c] py-4 text-center px-margin-mobile md:px-margin-desktop">
+<p class="font-body-sm text-body-sm text-primary-fixed-dim opacity-60">© 2024 Texas Covenant Home Inspections. All rights reserved.</p>
+</div>
+</footer>
+
+
+</body></html>

@@ -1,7 +1,7 @@
 {
   "projectId": "12370191986568299920",
   "projectTitle": "Texas Covenant Home Inspections",
-  "downloadedAt": "2026-06-24",
+  "downloadedAt": "2026-07-02",
   "screens": [
     {
       "title": "About (Updated Gold) - Texas Covenant Home Inspections",
@@ -23,6 +23,13 @@
       "folder": "contact-updated-gold",
       "width": 2560,
       "height": 2224
+    },
+    {
+      "title": "Structural Inspection (Updated Layout) - Texas Covenant Home Inspections",
+      "id": "eeff681ea2c046bfbb90db1e965c1f9f",
+      "folder": "structural-inspection-updated-layout",
+      "width": 2560,
+      "height": 4800
     },
     {
       "title": "Design System",
