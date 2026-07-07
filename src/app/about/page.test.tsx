@@ -84,4 +84,12 @@ describe("AboutPage", () => {
       }),
     ).not.toBeInTheDocument();
   });
+
+  it("includes the Champions School career call to action", () => {
+    render(<AboutPage />);
+
+    expect(
+      screen.getByRole("link", { name: /championsschool\.com/i }),
+    ).toBeInTheDocument();
+  });
 });

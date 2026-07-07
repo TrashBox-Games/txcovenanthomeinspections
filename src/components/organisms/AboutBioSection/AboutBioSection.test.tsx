@@ -48,4 +48,17 @@ describe("AboutBioSection", () => {
     expect(article).toBeInTheDocument();
     expect(article).not.toHaveClass("border");
   });
+
+  it("renders the Champions School career call to action", () => {
+    render(<AboutBioSection content={sampleBio} />);
+
+    expect(
+      screen.getByRole("heading", {
+        name: /interested in a career in realty or home inspections/i,
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /championsschool\.com/i }),
+    ).toHaveAttribute("href", "https://championsschool.com");
+  });
 });

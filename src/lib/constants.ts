@@ -27,6 +27,11 @@ export const HERO_IMAGE = "/images/hero.webp";
 
 export const JOEL_PORTRAIT = "/images/joelpiercy.webp";
 
+export const CHAMPIONS_SCHOOL = {
+  href: "https://championsschool.com",
+  label: "Championsschool.com",
+} as const;
+
 export const FAVICON = {
   path: "/images/favicon",
   ico: "/images/favicon/favicon.ico",
