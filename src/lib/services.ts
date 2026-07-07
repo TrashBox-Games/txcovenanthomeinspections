@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
         imageAlt: "Interior HVAC supply register on a textured wall",
       },
       {
-        label: "Air Purification System",
+        label: "Heating & Cooling Systems",
         image: "/images/services/hvac_page/air-purification-system.webp",
         imageAlt: "Whole-home air purification unit installed on ductwork",
       },
