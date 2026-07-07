@@ -44,4 +44,9 @@ describe("MobileNavMenu", () => {
     fireEvent.click(screen.getByRole("button", { name: /close menu/i }));
     expect(onClose).toHaveBeenCalledOnce();
   });
+
+  it("renders the TREC ID at the bottom of the menu", () => {
+    render(<MobileNavMenu isOpen onClose={vi.fn()} activePath="/" />);
+    expect(screen.getByText("TREC ID: 27132")).toBeInTheDocument();
+  });
 });

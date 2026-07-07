@@ -23,11 +23,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-outline-variant bg-surface">
-      <div className="container-site flex h-24 items-center justify-between">
-        <Logo size="lg" />
+      <div className="container-site grid h-24 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 md:gap-6">
+        <Logo size="lg" className="shrink-0" />
 
         <nav
-          className="hidden h-full items-center gap-8 md:flex"
+          className="hidden h-full min-w-0 items-center justify-center gap-3 md:flex md:gap-4 lg:gap-6 xl:gap-8"
           aria-label="Main navigation"
         >
           {NAV_ITEMS.map((item) =>
@@ -45,26 +45,30 @@ export function Header() {
           )}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="relative flex shrink-0 items-center justify-self-end gap-2 md:gap-4">
           <a
             href={SITE.phoneHref}
-            className="hidden text-base font-bold text-gold transition-colors hover:text-gold-hover md:inline md:text-lg"
+            aria-label="Call Now To Schedule!"
+            className="hidden flex-col items-center self-center text-center text-base leading-tight font-bold text-gold transition-colors hover:text-gold-hover xl:flex xl:text-lg"
           >
-            Call Now To Schedule!
+            <span className="whitespace-nowrap">Call Now</span>
+            <span className="whitespace-nowrap">To Schedule!</span>
           </a>
           <Button
             href={SITE.phoneHref}
             variant="primary"
             size="sm"
-            className="px-2 text-xs sm:px-4 sm:text-sm"
+            className="min-w-0 shrink px-2 text-xs sm:px-4 sm:text-sm"
           >
             <Phone className="h-4 w-4 shrink-0" />
-            {SITE.phone}
+            <span className="min-w-0 text-center leading-tight">
+              {SITE.phone}
+            </span>
           </Button>
 
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-primary transition-colors hover:bg-surface-container-low md:hidden"
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-primary transition-colors hover:bg-surface-container-low md:hidden"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-menu"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -72,6 +76,9 @@ export function Header() {
           >
             <Menu className="h-5 w-5" />
           </button>
+          <span className="absolute left-full ml-2 hidden whitespace-nowrap text-xs text-on-surface-variant xl:inline md:ml-4">
+            TREC ID: {SITE.trecId}
+          </span>
         </div>
       </div>
 

@@ -30,8 +30,7 @@ export function Logo({
         className={cn(
           "w-auto object-contain",
           sizeMap[size],
-          variant === "footer" &&
-            "rounded-sm bg-surface-container-lowest p-1",
+          variant === "footer" && "bg-surface-container-lowest rounded-sm p-1",
         )}
       />
     </Link>

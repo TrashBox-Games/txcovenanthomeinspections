@@ -7,6 +7,7 @@ export const SITE = {
   email: "txcovenanthomeinspections@gmail.com",
   infoEmail: "txcovenanthomeinspections@gmail.com",
   location: "Greater Houston Area",
+  trecId: "27132",
   copyright: `© ${new Date().getFullYear()} Texas Covenant Home Inspections. All rights reserved.`,
   developer: {
     name: "Trashbox",

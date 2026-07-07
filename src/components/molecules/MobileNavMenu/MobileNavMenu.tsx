@@ -208,6 +208,9 @@ export function MobileNavMenu({
                 <Phone className="h-4 w-4" />
                 {SITE.phone}
               </Button>
+              <p className="mt-3 text-center text-xs text-on-surface-variant">
+                TREC ID: {SITE.trecId}
+              </p>
             </div>
           </motion.nav>
         </>
