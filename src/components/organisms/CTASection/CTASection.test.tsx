@@ -44,4 +44,13 @@ describe("CTASection", () => {
       screen.getByText(/we look forward to serving you/i),
     ).toBeInTheDocument();
   });
+
+  it("links to the contact page with Email Us label", () => {
+    render(<CTASection />);
+
+    expect(screen.getByRole("link", { name: /email us/i })).toHaveAttribute(
+      "href",
+      "/contact",
+    );
+  });
 });

@@ -22,13 +22,13 @@ export function CTASection() {
             Call or Text Now
           </Button>
           <Button
-            href={`mailto:${SITE.email}`}
+            href="/contact"
             variant="outline"
             size="lg"
             className="border-on-primary text-on-primary hover:bg-on-primary/10"
           >
             <Mail className="h-4 w-4" />
-            Email Joel
+            Email Us
           </Button>
         </div>
       </FadeIn>
