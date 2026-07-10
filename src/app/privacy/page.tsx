@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Learn how ${SITE.name} collects and uses information submitted through our website contact form.`,
 };
 
-const LAST_UPDATED = "June 30, 2026";
+const LAST_UPDATED = "July 10, 2026";
 
 export default function PrivacyPage() {
   return (

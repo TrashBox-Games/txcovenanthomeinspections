@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
+import { GoogleAdsTag } from "@/components/atoms/GoogleAdsTag/GoogleAdsTag";
 import { PageLayout } from "@/components/templates/PageLayout/PageLayout";
 import { HeroImagePreload } from "@/components/organisms/HeroSection/HeroImagePreload";
 import { SITE } from "@/lib/constants";
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${beVietnamPro.variable} ${GeistSans.variable} font-body antialiased`}
       >
+        <GoogleAdsTag />
         <PageLayout>{children}</PageLayout>
       </body>
     </html>

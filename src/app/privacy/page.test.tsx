@@ -51,6 +51,14 @@ describe("PrivacyPage", () => {
     ).toBeInTheDocument();
   });
 
+  it("discloses Google Ads conversion tracking", () => {
+    render(<PrivacyPage />);
+
+    expect(
+      screen.getByText(/google ads conversion tracking/i),
+    ).toBeInTheDocument();
+  });
+
   it("includes a contact email for privacy questions", () => {
     render(<PrivacyPage />);
 

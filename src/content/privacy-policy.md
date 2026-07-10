@@ -11,7 +11,7 @@ When you use our contact form, we collect:
 - Your phone number, if you choose to provide it
 - The contents of your message
 
-We do not use analytics, advertising trackers, or cookies to track your browsing activity on this website.
+We use Google Ads conversion tracking to measure whether visitors who find us through our advertising complete meaningful actions on this website, such as submitting the contact form. Google may set cookies or use similar technologies as part of this service. Learn more in [Google's privacy policy](https://policies.google.com/privacy).
 
 ## How We Use Your Information
 

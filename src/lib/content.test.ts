@@ -18,6 +18,7 @@ describe("getPrivacyPolicy", () => {
     expect(policy).toContain("contact form");
     expect(policy).toContain("Trashbox");
     expect(policy).toContain("do not sell");
+    expect(policy).toContain("Google Ads");
     expect(policy).toContain("txcovenanthomeinspections@gmail.com");
   });
 });
