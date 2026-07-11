@@ -45,10 +45,10 @@ describe("CTASection", () => {
     ).toBeInTheDocument();
   });
 
-  it("links to the contact page with Contact Us label", () => {
+  it("links to the contact page with Email Us label", () => {
     render(<CTASection />);
 
-    expect(screen.getByRole("link", { name: /contact us/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /email us/i })).toHaveAttribute(
       "href",
       "/contact",
     );
