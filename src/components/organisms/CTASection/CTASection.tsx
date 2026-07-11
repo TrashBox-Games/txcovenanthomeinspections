@@ -28,7 +28,7 @@ export function CTASection() {
             className="border-on-primary text-on-primary hover:bg-on-primary/10"
           >
             <Mail className="h-4 w-4" />
-            Email Us
+            Contact Us
           </Button>
         </div>
       </FadeIn>
